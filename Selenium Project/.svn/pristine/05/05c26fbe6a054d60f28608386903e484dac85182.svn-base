@@ -1,0 +1,67 @@
+package aem_Components;
+
+import java.util.Hashtable;
+import org.testng.SkipException;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+import com.relevantcodes.extentreports.ExtentReports;
+import com.relevantcodes.extentreports.ExtentTest;
+import com.relevantcodes.extentreports.LogStatus;
+
+import Marsh_Report.ExtentManager;
+import Marsh_util.Data_Utility;
+import Marsh_util.Keywords;
+import Marsh_util.Xls_Reader;
+
+
+public class Auth_RR03_Right_Rail_PDF_Download_Test {
+
+	ExtentReports ExtRep = null;
+	ExtentTest ExtTest = null;
+	Keywords TestKeywords;
+	String VARIABLE_testcasename = "Auth_RR03_Right_Rail_PDF_Download_Test";
+	String VARIABLE_path = System.getProperty("user.dir") + "\\Data_Sheet\\Test_Data_Marsh_AEM.xlsx";
+	Xls_Reader xlsx = new Xls_Reader(VARIABLE_path);
+	Data_Utility data_util = new Data_Utility();
+	int usernum = 1;
+
+
+@Test (dataProvider="getdata")
+	public void AuthRightRailPDFDownload_Test(Hashtable <String,String> hashtable) throws InterruptedException {
+		//Skipping the test case with Runmode as 'N'
+		data_util.TestCaseIsRun(VARIABLE_testcasename, xlsx, ExtTest);
+		//Skipping the test RUN with Runmode as 'N'
+		if (hashtable.get("Runmode").equalsIgnoreCase("N")){
+			ExtTest.log(LogStatus.SKIP, "Testrun is skipped as Runmode is set to 'N'");			
+			throw new SkipException("Skipping the testrun as Runmode is set to 'N'");
+		}
+	
+		ExtTest.log(LogStatus.INFO, "Test execution started.");
+		TestKeywords = new Keywords(xlsx, ExtTest);
+		TestKeywords.executeKeywords(VARIABLE_testcasename, hashtable); 
+		
+	}
+	
+@DataProvider
+	public Object[][] getdata(){
+		return data_util.data_reader(VARIABLE_testcasename, xlsx);
+	}
+
+@BeforeMethod
+    public void beforeMethod() {
+	  ExtRep = ExtentManager.getInstance();
+	  ExtTest = ExtRep.startTest(VARIABLE_testcasename + " - User " + String.valueOf(usernum));
+	  usernum ++;
+}
+	
+@AfterMethod
+	public void aft_test() {
+	TestKeywords.FinalTestResult();
+	if (TestKeywords != null)
+		TestKeywords.quitsession();
+	 	ExtRep.endTest(ExtTest);
+	 	ExtRep.flush();
+	}
+}

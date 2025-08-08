@@ -1,0 +1,1181 @@
+######This file contains all the element locators of AEM and Publish instance.#####
+
+## URL#######
+AEMStageUrl=https://author-stage2.www.marshinc.net/sites.html/content/marsh/
+AEMQaUrl=https://author-qa2.www.marshinc.net/sites.html/content/marsh/
+AEMRSSurl=https://author-stage2.www.marshinc.net/cf#/content/marsh/americas/us/en/insights-ric-rss.html
+EntryRampUrl=https://author-stage2.www.marshinc.net/cf#/content/marsh/americas/us/en/contact-us.html
+TeaserAEMUrl=https://author-qa2.www.marshinc.net/cf#/content/marsh/americas/us/en/latestnews.html
+AdaptiveFormRefrenceUrl=https://author-qa2.www.marshinc.net/cf#/content/marsh/americas/ca/en_ca/services/forml.html
+GlobalPageurl=https://qa.www.marsh.com/
+Publishurl=https://qa.www.marsh.com/us/home.html
+StageUrl=https://stage.www.marsh.com/us/home.html
+ClientPortalurl=https://stage.www.marsh.com/us/clientportal.html
+InsurancePortalurl=https://stage.www.marsh.com/us/insights/research/asia-insurance-market-report-2016.html 
+Microsite_Registrationurl=https://qa.www.marsh.com/us/opengeneric.html
+TeaserUrl=https://qa.www.marsh.com/us/latestnews.html 
+RSSUrl=https://qa.www.marsh.com/us/insights-ric-rss.html
+ImportUrl=https://qa.www.marsh.com/us/export-contactus.html
+htmlUrl=https://stage.www.marsh.com/us/htmleditor.html
+NavUrl=https://stage.www.marsh.com/us/userinfoexport.html
+
+## Author Sign in Locators ##
+username_id=username
+password_id=password
+SigninButton_xpath=//button[@id= 'submit-button']
+
+##### AEM Author Locators  ##
+AEMLeadership_xpath=//span[contains(text(),'Leadership | Marsh')]
+Insights/RIC_RSS_xpath=//span[contains(text(),'Insights/RIC RSS')]
+
+######Touch UI locators#####
+UserIcon_xpath=//coral-icon[@icon='user']
+TouchUIPreview_xpath=//button[@type='button' and @title='Preview']
+TouchUIEditMode_xpath=//button[@type='button' and @data-layer='Edit' and @data-align='right']
+TouchUIEdit_xpath=//coral-button-label[contains(text(),'Edit')]
+TouchUIConfigure_xpath=//button[@data-action='CONFIGURE']/i
+TouchUIParent_xpath=//button[@data-action='PARENT']/i
+TouchUIToggleFullscreen_xpath=//button[@title='Toggle Fullscreen']/i
+TouchUIiframe_id=ContentFrame
+BoxAddField_xpath=//button[@type='button' and @class='js-coral-Multifield-add coral-Multifield-add coral-Button']
+BoxCancel_xpath=//button[@type='button' and @class='coral-MinimalButton cq-dialog-header-action cq-dialog-cancel']
+Done_xpath=//button[@class='coral-MinimalButton cq-dialog-header-action cq-dialog-submit']/i
+BoxOk_xpath=//button[@class='coral-MinimalButton cq-dialog-header-action cq-dialog-submit-multifield']/i
+BoxDeleteIcon_xpath=//button[@type='button' and @class='js-coral-Multifield-remove coral-Multifield-remove coral-Button coral-Button--square coral-Button--quiet eventAdded']
+BoxInfoIcon_xpath=//span[@class='coral-Form-fieldinfo coral-Icon coral-Icon--infoCircle coral-Icon--sizeS']
+TouchUIFirstTabText_xpath=//a[@class='coral-TabPanel-tab is-active']
+PathBrowser1_xpath=//div[contains(@class,'coral-FixedColumn foundation-layout-util-vmargin is-active')]/div/div//button[@class='coral-Button coral-Button--square js-coral-pathbrowser-button']/i
+PathBrowser2_xpath=//div[contains(@class,'coral-FixedColumn foundation-layout-util-vmargin is-active')]/div/div[2]//button[@class='coral-Button coral-Button--square js-coral-pathbrowser-button']/i
+PathBrowser3_xpath=//div[contains(@class,'coral-FixedColumn foundation-layout-util-vmargin is-active')]/div//div[3]//button[@class='coral-Button coral-Button--square js-coral-pathbrowser-button']/i
+PathBrowser7_xpath=//div[contains(@class,'coral-FixedColumn foundation-layout-util-vmargin is-active')]/div/div[7]//button[@class='coral-Button coral-Button--square js-coral-pathbrowser-button']/i
+MultiPathBrowser1_xpath=//div[contains(@class,'coral-FixedColumn is-active')]//li[1]//button[@class='coral-Button coral-Button--square js-coral-pathbrowser-button']/i
+MultiPathBrowser2_xpath=//div[contains(@class,'coral-FixedColumn is-active')]//li[2]//button[@class='coral-Button coral-Button--square js-coral-pathbrowser-button']/i
+MultiPathBrowser3_xpath=//div[contains(@class,'coral-FixedColumn is-active')]//li[3]//button[@class='coral-Button coral-Button--square js-coral-pathbrowser-button']/i
+MultiPathBrowser4_xpath=//div[contains(@class,'coral-FixedColumn is-active')]//li[4]//button[@class='coral-Button coral-Button--square js-coral-pathbrowser-button']/i
+PathBrowserClose_xpath=//div[@class='coral-Pathbrowser-picker coral-Modal' and contains(@style,'block')]/div/button[2]/i
+PathBrowserselectedValue_xpath=//div[@class='coral-Pathbrowser-picker coral-Modal' and contains(@style,'block')]/div[2]/div[2]//nav[@class='coral-ColumnView-column is-active']/div/a[contains(@class, 'is-active')]
+TouchUIFirstTabText_xpath=//a[@class='coral-TabPanel-tab is-active']
+EditBoxLinks_xpath=//div[@class='cq-dialog-content coral-TabPanel coral-TabPanel--large']/nav/a
+AEMBoxTab2_xpath=//div[@class='cq-dialog-content coral-TabPanel coral-TabPanel--large']/nav/a[2]
+AEMBoxTab3_xpath=//div[@class='cq-dialog-content coral-TabPanel coral-TabPanel--large']/nav/a[3]
+AEMBoxTab4_xpath=//div[@class='cq-dialog-content coral-TabPanel coral-TabPanel--large']/nav/a[4]
+AEMBoxTab5_xpath=//div[@class='cq-dialog-content coral-TabPanel coral-TabPanel--large']/nav/a[5]
+AEMBoxTab6_xpath=//div[@class='cq-dialog-content coral-TabPanel coral-TabPanel--large']/nav/a[6]
+
+MarshGlobalPage_xpath=//coral-columnview-item[@data-foundation-collection-item-id='/content/marsh/marsh']/coral-columnview-item-thumbnail/img
+Americas_xpath=//coral-columnview-item-content[contains(text(),'Americas')]
+UnitedStates_xpath=//coral-columnview-item-content[contains(text(),'United States')]
+us-en_xpath=//coral-columnview-item-content[contains(text(),'us-en')]
+Canada_xpath=//coral-columnview-item-content[contains(text(),'Canada')]
+en-ca_xpath=//coral-columnview-item-content[contains(text(),'en_ca')]
+Open_en-ca_xpath=//coral-columnview-item[@data-foundation-collection-item-id='/content/marsh/americas/ca/en_ca']/coral-columnview-item-thumbnail/img
+Open_us-en_xpath=//coral-columnview-item[@data-foundation-collection-item-id='/content/marsh/americas/us/en']/coral-columnview-item-thumbnail/img
+MarshPortal_xpath=//coral-columnview-item[@data-foundation-collection-item-id='/content/marsh/americas/us/en/clientportal']/coral-columnview-item-thumbnail/img
+Search_xpath=//coral-columnview-item[@data-foundation-collection-item-id='/content/marsh/americas/us/en/search']/coral-columnview-item-thumbnail/img
+RegistrationForm_xpath=//coral-columnview-item[@data-foundation-collection-item-id='/content/marsh/americas/us/en/registration-form']/coral-columnview-item-thumbnail/img
+AboutMarshPage_xpath=//coral-columnview-item-content[contains(text(),'About Marsh')]
+Leadership_xpath=//coral-columnview-item[@data-foundation-collection-item-id='/content/marsh/americas/us/en/about-marsh/leadership']/coral-columnview-item-thumbnail/img
+Industries_xpath=//coral-columnview-item-content[contains(text(),'Industries | Marsh')]
+RightRailMining_xpath=//coral-columnview-item[@data-foundation-collection-item-id='/content/marsh/americas/us/en/industries/mining-metals-minerals-insurance']/coral-columnview-item-thumbnail/img
+FormRelated_xpath=//coral-columnview-item-content[contains(text(),'Forms Related')]
+AdaptiveForm_xpath=//coral-columnview-item[@data-foundation-collection-item-id='/content/marsh/americas/ca/en_ca/forms/formy']/coral-columnview-item-thumbnail/img
+SharedContent_xpath=//coral-columnview-item-content[contains(text(),'SharedContent')]
+SharedPeople_xpath=//coral-columnview-item-content[contains(text(),'SharedPeople')]
+GlobalSharedPeople_xpath=//coral-columnview-item-content[contains(text(),'global-sharedpeople')]
+TestPeoplePage_xpath=//coral-columnview-item[@data-foundation-collection-item-id='/content/marsh/sharedcontent/sharedpeople/global-sharedpeople/rajender']/coral-columnview-item-thumbnail/img
+SharedOffice_xpath=//coral-columnview-item-content[contains(text(),'SharedOffices')]
+SharedOfficeUS_xpath=//coral-columnview-item-content[contains(text(),'United States')]
+SharedOfficeAtlanta_xpath=//coral-columnview-item[@data-foundation-collection-item-id='/content/marsh/sharedcontent/sharedoffices/united-states/atlanta']/coral-columnview-item-thumbnail/img
+OpenGeneric_xpath=//coral-columnview-item[@data-foundation-collection-item-id='/content/marsh/americas/us/en/opengeneric']/coral-columnview-item-thumbnail/img
+Careers_Marsh_xpath=//coral-columnview-item-content[contains(text(),'Careers | Marsh')]
+Campus_Recruiting_xpath=//coral-columnview-item-content[contains(text(),'Campus Recruiting')]
+Life_At_Marsh_xpath=//coral-columnview-item[@data-foundation-collection-item-id='/content/marsh/americas/us/en/careers/campusrecruiting/life-at-marsh']/coral-columnview-item-thumbnail/img
+LatestNews_xpath=//coral-columnview-item[@data-foundation-collection-item-id='/content/marsh/americas/us/en/latestnews']/coral-columnview-item-thumbnail/img
+Insights_Marsh_xpath=//coral-columnview-item-content[contains(text(),'Insights | Marsh')]
+Research&Briefings_xpath=//coral-columnview-item-content[contains(text(),'Research & Briefings | Marsh')]
+RiskContextBlogMarshPage_xpath=//coral-columnview-item-content[contains(text(),'Risk in Context Blog | Marsh')]
+RiskContextBlogMarsh_xpath=//coral-columnview-item[@data-foundation-collection-item-id='/content/marsh/americas/us/en/insights/risk-in-context']/coral-columnview-item-thumbnail/img
+MarshHome_xpath=//coral-columnview-item[@data-foundation-collection-item-id='/content/marsh/americas/us/en/home']/coral-columnview-item-thumbnail/img
+ServicesMarsh_xpath=//coral-columnview-item-content[contains(text(),'Services | Marsh')]
+WorkersCompensation_xpath=//coral-columnview-item-content[contains(text(),'Compensation Insurance | Marsh')]
+CompensationPage_xpath=//coral-columnview-item[@data-foundation-collection-item-id='/content/marsh/americas/us/en/services/workers-compensation/workers-compensation-loss-profile']/coral-columnview-item-thumbnail/img
+Insights_RSS_xpath=//coral-columnview-item[@data-foundation-collection-item-id='/content/marsh/americas/us/en/insights-ric-rss']/coral-columnview-item-thumbnail/img
+Export_Contactus_xpath=//coral-columnview-item[@data-foundation-collection-item-id='/content/marsh/americas/us/en/export-contactus']/coral-columnview-item-thumbnail/img
+Import_Contactus_xpath=//coral-columnview-item[@data-foundation-collection-item-id='/content/marsh/americas/us/en/import-contactus']/coral-columnview-item-thumbnail/img
+ContactUsPage_xpath=//coral-columnview-item[@data-foundation-collection-item-id='/content/marsh/americas/us/en/contact-us']/coral-columnview-item-thumbnail/img
+RRImageBioPage_xpath=//coral-columnview-item[@data-foundation-collection-item-id='/content/marsh/americas/us/en/insights/risk-in-context/three-key-risks-communications--media--and-technology-companies-']/coral-columnview-item-thumbnail/img
+HospitalityGaming_xpath=//coral-columnview-item[@data-foundation-collection-item-id='/content/marsh/americas/us/en/industries/hospitality-gaming']/coral-columnview-item-thumbnail/img
+Client&Market_xpath=//coral-columnview-item-content[contains(text(),'Client and Market Technologies | Marsh')]
+MarshConnect_xpath=//coral-columnview-item[@data-foundation-collection-item-id='/content/marsh/americas/us/en/services/client-market-technologies/marsh-connect-help']/coral-columnview-item-thumbnail/img
+CareersMarshPage_xpath=//coral-columnview-item[@data-foundation-collection-item-id='/content/marsh/americas/us/en/careers']/coral-columnview-item-thumbnail/img
+ComMediaTechMarsh_xpath=//coral-columnview-item[@data-foundation-collection-item-id='/content/marsh/americas/us/en/industries/communications-media-technology']/coral-columnview-item-thumbnail/img
+AEMContactUs_xpath=//coral-columnview-item[@data-foundation-collection-item-id='/content/marsh/americas/us/en/contact-us']/coral-columnview-item-thumbnail/img
+WhatWeDoMarsh_xpath=//coral-columnview-item[@data-foundation-collection-item-id='/content/marsh/americas/us/en/about-marsh/what-we-do']/coral-columnview-item-thumbnail/img
+RRTagbord_xpath=//coral-columnview-item[@data-foundation-collection-item-id='/content/marsh/americas/us/en/insights/research/the-global-risks-report-2017']/coral-columnview-item-thumbnail/img
+HTML_xpath=//coral-columnview-item[@data-foundation-collection-item-id='/content/marsh/americas/us/en/htmleditor']/coral-columnview-item-thumbnail/img
+##### Header & Footer ###
+HeaderDiv_xpath=//div[@class=' x-panel cq-editbar cq-element-header']
+HeaderEdit_xpath=//div[@class=' x-panel cq-editbar cq-element-header']/div/div/div/table/tbody/tr/td/table/tbody/tr/td[3]/table/tbody/tr[2]/td[2]/em/button
+HeaderAuthorLinks_xpath=//ul[@class='x-tab-strip x-tab-strip-top']/li/a[2]
+FullHeader_xpath=//input[@id='ext-comp-1265']
+MiniHeader_xpath=//input[@id='ext-comp-1266']
+HeaderSetting_xpath=//ul[@class='x-tab-strip x-tab-strip-top']/li[1]
+PrimaryNavigation1_xpath=//ul[@class='x-tab-strip x-tab-strip-top']/li[3]
+PrimaryNavigationButtonDisplay_xpath=//input[@name='./buttonDisplay1']
+
+FooterConfDiv_xpath=//div[@data-path='/content/marsh/americas/us/en/jcr:content/footer']
+MMCLogoLink_xpath=//input[@name='./mmclogolinkpath']
+
+####C34_TeamListing######
+TeamListingConfDiv_xpath=//div[@data-path='/content/marsh/americas/us/en/about-marsh/leadership/jcr:content/leftbody/teamlisting']
+LeadershipRadio_xpath=//input[@value='leader']
+RecruitingRadio_xpath=//input[@value='recruit']
+
+########
+RRPeopleListConf_xpath=//div[@data-path='/content/marsh/americas/us/en/insights/risk-in-context/jcr:content/BlogListing_RightRail_Par/rightrailpeoplelist']
+RRPeopleListHeader_xpath=//input[@name='./headertext']
+RRMostReadTeaserConf_xpath=//div[@data-path='/content/marsh/americas/us/en/insights/risk-in-context/jcr:content/BlogListing_RightRail_Par/rightrailmostreadtea_355250857']
+RRMostReadTeaserHeader_xpath=//input[@name='./header']
+RRMostReadTeaserItem_xpath=//input[@name='./maxItem']
+
+RRPeopleBlogcarouselConf_xpath=//div[@data-path='/content/marsh/americas/us/en/latestnews/jcr:content/rightrail/rightrailpeopleblogc_1003606973']
+RRPeopleBlogcarouselNext_xpath=//input[@name='./nextLabel']
+RRPeopleBlogcarouselPrev_xpath=//input[@name='./previousLabel']
+RRPeopleBlogcarouselHeader_xpath=//input[@name='./header']
+RRBlogCarousel_xpath=//input[@value='blog']
+RRPeopleCarousel_xpath=//input[@value='people']
+CarouselReadLabel_xpath=//input[@name='']
+
+#####Breadcrumb & Implied Cookie Policy####
+BreadcrumbConf_xpath=//div[@data-path='/content/marsh/americas/us/en/jcr:content/breadcrumbs']
+ImpliedCookiePolicyConf_xpath=//div[@data-path='/content/marsh/americas/us/en/jcr:content/cookiepolicy']
+ImpliedCookiePolicyRichText_xpath=//div[@class='coral-RichText-editable coral-Form-field coral-Textfield coral-Textfield--multiline coral-RichText is-edited webkit chrome']/p
+ImpliedCookiePolicyButton_xpath=//input[@name='./buttonlabel']
+
+#####Basic Accordian####
+BasicAccordianConf1_xpath=//div[@data-path='/content/marsh/americas/us/en/careers/campusrecruiting/life-at-marsh/jcr:content/leftpar/basicaccordioncontai/basicaccordianitem0']
+BasicAccordianConf2_xpath=//div[@data-path='/content/marsh/americas/us/en/careers/campusrecruiting/life-at-marsh/jcr:content/leftpar/basicaccordioncontai/basicaccordianitem1']
+BasicAccordianConf3_xpath=//div[@data-path='/content/marsh/americas/us/en/careers/campusrecruiting/life-at-marsh/jcr:content/leftpar/basicaccordioncontai/basic_accordian_container/basicaccordion']
+BasicAccordianConf4_xpath=//div[@data-path='/content/marsh/americas/us/en/careers/campusrecruiting/life-at-marsh/jcr:content/leftpar/basicaccordioncontai/basic_accordian_container/basicaccordion_0']
+BasicAccordianLeanMore_xpath=//div[@class='coral-RichText-editable coral-Form-field coral-Textfield coral-Textfield--multiline coral-RichText is-edited webkit chrome']/p[2]/a
+
+#######
+ClientFeatureAreaDiv_xpath=//div[@data-path='/content/marsh/americas/us/en/clientportal/jcr:content/clientfeaturearea']
+WelcomeText_xpath=//input[@value='Welcome,']
+PasswordLinkText_xpath=//input[@value='Password Reset']
+HelpLinkText_xpath=//input[@value='Help']
+ClientFeatureAreaImage_xpath=//input[@value='/content/dam/marsh/Imagery/Main-Left-Body/Feature-Area/Header/client-portal-header-feature-area.jpg']
+ContentListingConfDiv_xpath=//div[@data-path='/content/marsh/americas/us/en/clientportal/jcr:content/contentlisting']
+ContentListingHeader_xpath=//input[@name='./header']
+ContentListingSHeader_xpath=//input[@name='./subheader']
+ClienthubConfDiv_xpath=//div[@data-path='/content/marsh/americas/us/en/jcr:content/clienthub']
+SiteMapConfDiv_xpath=//div[@data-path='/content/marsh/americas/us/en/jcr:content/sitemapconfig']
+SiteMapDomain_xpath=//input[@name='./rootpath']
+
+TitleComp_xpath=//div[@data-path='/content/marsh/americas/us/en/careers/campusrecruiting/life-at-marsh/jcr:content/title']
+TitleText_xpath=//input[@name='./jcr:title' and @type='text']
+LoginButtonText_xpath=//input[@name='./loginButtonText']
+RegisterText_xpath=//input[@name='./registerText']
+ForgotPasswordText_xpath=//input[@name='./forgotPasswordText']
+HeaderText_xpath=//input[@name='./headerText']
+SignOutbutton_xpath=//input[@name='./signOutButtonText']
+Portallabel_xpath=//input[@name='./portalLabel']
+Loginlabel_xpath=//input[@name='./loginLabel']
+SiteIdentifier_xpath=//input[@name='./loginsite']
+
+MyApplicationsConfDiv_xpath=//div[@data-path='/content/marsh/americas/us/en/clientportal/jcr:content/myapplication']
+MyApplicationText_xpath=//input[@name='./mtitle']
+
+SearchConfDiv_xpath=//div[@data-path='/content/marsh/americas/us/en/search/jcr:content/advancedsearch']
+SearchHeader_xpath=//input[@name='./header']
+SearchKeyword_xpath=//input[@name='./keywordsLabel']
+SearchButtonLabel_xpath=//input[@name='./searchButtonLabel']
+SearchStartDate_xpath=//input[@name='./startDate']
+SearchEndDate_xpath=//input[@name='./endDate']
+SearchResultDiv_xpath=//div[@data-path='/content/marsh/americas/us/en/search/jcr:content/searchresults']
+SearchResult_xpath=//input[@name='./resultsSetence']
+SearchNoResult_xpath=//input[@name='./noResultsText']
+
+###  AEM Localization  #####
+LocalizationConfDiv_xpath=//div[@data-path='/content/marsh/americas/us/en/jcr:content/localization']
+DropDown1_xpath=//div[@class='coral-FixedColumn-column']/div/span/select
+DropDown2_xpath=//div[@class='coral-FixedColumn-column']/div[2]/span/select
+DropDown3_xpath=//div[@class='coral-FixedColumn-column']/div[3]/span/select
+DropDown5_xpath=//div[@class='coral-FixedColumn-column']/div[5]/span/select
+SelectedDate_xpath=//ul[contains(@class, 'is-visible')]/li[@class='coral-SelectList-item coral-SelectList-item--option is-highlighted']
+
+EventFeaturePublishDate_xpath=//div[@class='large-8 medium-8 small-12 columns']/span
+EventDetailsPublishDate_xpath=//p/strong
+ContentListingpublishDate_xpath=//li[@class='doc-date']
+PressReleasePublishDate_xpath=//p[@class='pr-details']/span
+
+######  Right Rail ########
+RightRailBoxConfDiv_xpath=//div[@data-path='/content/marsh/americas/us/en/industries/mining-metals-minerals-insurance/jcr:content/rightrail/rightraillinklist_1']
+RightRailHeader_xpath=//input[@name='./header']
+RightRailViewMore_xpath=//input[@name='./viewMore']
+RightRailManual_xpath=//input[@value='manual']
+RightRailDynamic_xpath=//input[@value='dynamic']
+RightRailDynamicMulti_xpath=//input[@value='dynamicmultipath']
+RightRailTabText_xpath=//a[contains(@class, 'list-option-tab-showhide-target') and not(contains(@class, ' hide'))]
+
+RightRailBox1_xpath=//p[@class='label' and contains(text(),'RELATED PRODUCTS AND SOLUTIONS')]
+RightRailBox2_xpath=//p[@class='label' and contains(text(),'OTHER AREAS OF INTEREST')]
+RightRailBox3_xpath=//p[@class='label' and contains(text(),'INSIGHTS')]
+ViewMore_xpath=//dt[@class='current-filter has-sub']/a
+ViewMoreOptions_xpath=//dl[@class='filter-container']//dd/ul//a
+RightRailHeaderText_xpath=//h1
+RRBox1Links_xpath=//div[@class='rightraillinklist section'][1]//div[@class='text-area link-style']//a
+RRBox2Links_xpath=//div[@class='rightraillinklist section'][2]//div[@class='text-area link-style']//a
+RRBox3Links_xpath=//div[@class='rightraillinklist section'][3]//div[@class='text-area link-style']//a
+
+#######Adaptive Form#########
+Patterns_xpath=//coral-accordion-item-label[contains(text(),'Patterns')]
+RequiredCheckBox_xpath=//coral-checkbox[@name='./mandatory' and @checked]
+Cancel_xpath=//button[@class='coral-MinimalButton cq-dialog-header-action cq-dialog-cancel afTouchDialogCancelButton']/i
+ElementName_xpath=//input[@name='./name']
+EditRules_xpath=//button[@title='Edit Rules']/i
+RuleClose_xpath=//button[@class='exp-Close-Button coral-Button']/coral-button-label
+
+FirstNameChildDiv_xpath=//div[@data-path='/content/marsh/americas/ca/en_ca/forms/formy/jcr:content/guideContainer/rootPanel/items/guidetextbox']
+LastNameChildDiv_xpath=//div[@data-path='/content/marsh/americas/ca/en_ca/forms/formy/jcr:content/guideContainer/rootPanel/items/guidetextbox_1354103409']
+EmailAddressChildDiv_xpath=//div[@data-path='/content/marsh/americas/ca/en_ca/forms/formy/jcr:content/guideContainer/rootPanel/items/guidetextbox_1725436772']
+EmailRuleValidation_xpath=//td[@class='summary-cell coral-Table-cell']//pre
+TelephoneChildDiv_xpath=//div[@data-path='/content/marsh/americas/ca/en_ca/forms/formy/jcr:content/guideContainer/rootPanel/items/guidetextbox_499478314']
+TelephonePatterns_xpath=//input[@name='./displayPictureClause']
+CountryChildDiv_xpath=//div[@data-path='/content/marsh/americas/ca/en_ca/forms/formy/jcr:content/guideContainer/rootPanel/items/marshdropdown']
+AdaptiveBrowsePath_xpath=//button[@class='js-coral-pathbrowser-button coral-Button coral-Button--square']/coral-icon
+MarshClaimChildDiv_xpath=//div[@data-path='/content/marsh/americas/ca/en_ca/forms/formy/jcr:content/guideContainer/rootPanel/items/marshdropdown_614846139']
+MarshClaimValue_xpath=//input[@name='./_value']
+ItemsCheckChildDiv_xpath=//div[@data-path='/content/marsh/americas/ca/en_ca/forms/formy/jcr:content/guideContainer/rootPanel/items/marshcheckbox']
+ItemsBoxNumber_xpath=//input[@name='./colspan']
+RadioButtonChildDiv_xpath=//div[@data-path='/content/marsh/americas/ca/en_ca/forms/formy/jcr:content/guideContainer/rootPanel/items/marshradiobutton']
+PolicyBoxDivChild_xpath=//div[@data-path='/content/marsh/americas/ca/en_ca/forms/formy/jcr:content/guideContainer/rootPanel/items/marshdatepicker']
+FileUploadChildDiv_xpath=//div[@data-path='/content/marsh/americas/ca/en_ca/forms/formy/jcr:content/guideContainer/rootPanel/items/guidefileupload']
+FileUploadFilesCheck_xpath=//coral-checkbox[@name='./multiSelection' and @checked]
+GoogleReCaptchaChildDiv_xpath=//div[@data-path='/content/marsh/americas/ca/en_ca/forms/formy/jcr:content/guideContainer/rootPanel/items/marshgooglerecaptcha']
+GoogleReCaptchaEle_xpath=//input[@name='./googlesitekey']
+
+HiddenFieldBox_xpath=//div[@id='guideContainer-rootPanel-marshhiddenfield___guide-item']
+HiddenFieldDropDown_xpath=//div[@id='x-form-el-ext-comp-5462']/div/img
+HiddenTypeDropDownBox_xpath=//div[@class='x-layer x-combo-list cq-_46_47type-0']
+HiddenSelectionText_xpath=//li[@style='']/a[2]/em/span/span
+AdaptiveRefrenceBoxEdit=//div[@id='guideContainer-rootPanel-guidetextbox___guide-item']
+AdaptiveRefrencePath_xpath=//div[@class='x-form-item x-tab-item']/div/div/img
+AdaptiveRefrenceMailTo_xpath=//div[@class='x-panel-bwrap']/div/div[2]/label
+
+#### Shared People & Offices  #########
+SharedPeopleConfDiv_xpath=//div[@data-path='/content/marsh/sharedcontent/sharedpeople/global-sharedpeople/rajender/jcr:content/sharedpeople']
+LanguageSelectionDrop_xpath=//span[@class='coral-Form-field language coral-Select']/select
+LanguageSelection_xpath=//span[@class='coral-Form-field language coral-Select']/ul/li
+ShortTitleValue_xpath=//input[@name='./shorttitle']
+SharedPeopleName_xpath=//input[@name='./firstname']
+SharedPeopleLast_xpath=//input[@name='./lastname']
+SharedPeopleRU_xpath=//input[@name='./recruitinguniv']
+SharedPeopleEmail_xpath=//input[@name='./email']
+SharedPeopleTitle_xpath=//input[@name='./title']
+SharedPeopleSBio_xpath=//input[@name='./shortbio']
+
+SharedOfficeConfDiv_xpath=//div[@data-path='/content/marsh/sharedcontent/sharedoffices/united-states/atlanta/jcr:content/sharedoffice']
+SharedCountry_xpath=//coral-columnview-column[@data-foundation-layout-columnview-columnid='/content/marsh/sharedcontent/sharedoffices']/coral-columnview-column-content/coral-columnview-item
+Latitude_xpath=//input[@name='./latitude']
+Longitude_xpath=//input[@name='./longitude']
+Telephone_xpath=//input[@name='./telephone']
+Fax_xpath=//input[@name='./fax']
+Telecopier_xpath=//input[@name='./telecopier']
+PhysicalAddressHeader_xpath=//input[@name='./physicaladdressheader']
+OfficeName_xpath=//input[@name='./name']
+AddressLine1_xpath=//input[@name='./addressline1']
+AddressLine2_xpath=//input[@name='./addressline2']
+AddressLine3_xpath=//input[@name='./addressline3']
+City_xpath=//input[@name='./city']
+State_xpath=//input[@name='./stateregion']
+ZipCode_xpath=//input[@name='./zippostalcode']
+OfficeCountry_xpath=//input[@name='./countryname']
+MailingAddressHeader_xpath=//input[@name='./mailingaddressheader']
+MailingAddressLine1_xpath=//input[@name='./mailingaddressline1']
+MailingAddressLine2_xpath=//input[@name='./mailingaddressline2']
+MailingAddressLine3_xpath=//input[@name='./mailingaddressline3']
+MailingCity_xpath=//input[@name='./mailingcity']
+MailingState_xpath=//input[@name='./mailingstateregion']
+MailingCountry_xpath=//input[@name='./mailingcountry']
+MailingZip_xpath=//input[@name='./mailingzippostalcode']
+
+PublishOfficeName_xpath=//div[@id='modalWindow']/div/div/p
+PublishAddressHeader_xpath=//div[@id='modalWindow']/div/div/dl/dt
+PublishAddressLine1_xpath=//div[@id='modalWindow']/div/div/dl/dd
+PublishAddressLine23_xpath=//div[@id='modalWindow']/div/div/dl/dd[2]
+PublishCityStateCountryZip_xpath=//div[@id='modalWindow']/div/div/dl/dd[3]
+PublishTelephone_xpath=//div[@id='modalWindow']/div/div/dl/dd[4]
+
+MailingAddHeader_xpath=//div[@id='modalWindow']/div/div/dl[2]/dt
+MailingAddLine123_xpath=//div[@id='modalWindow']/div/div/dl[2]/dd
+MailingCityStateCountryZip_xpath=//div[@id='modalWindow']/div/div/dl[2]/dd[2]
+MailingTelephone_xpath=//div[@id='modalWindow']/div/div/dl[2]/dd[3]
+MailingFax_xpath=//div[@id='modalWindow']/div/div/dl[2]/dd[4]
+MailingTelecopier_xpath=//div[@id='modalWindow']/div/div/dl[2]/dd[5]
+
+OfficeLocator_xpath=//a[@href='/us/contact-us/office-locator.html']
+OfficeLocatorText_xpath=//h1
+OfficeLocatorMenu_xpath=//section[@class='office-locator']/div/a
+SelectCountry_xpath=//a[@id='Canada']
+SelectOffice_xpath=//div[@class='row active']/div/div[1]/div
+GoogleMap_xpath=//div[@class='global-location modal open']/a/img
+
+#######Microsite Register########
+MicrositeRegisterConf_xpath=//div[@data-path='/content/marsh/americas/us/en/opengeneric/jcr:content/par/micrositeregistratio']
+MicrositeRegisterFirstName_xpath=//input[@name='./firstnamelabel']
+MicrositeRegisterReqError_xpath=//input[@name='./fieldrequirederror']
+MicrositeRegisterEmailMatch_xpath=//input[@name='./emailmatcherror']
+MicrositeRegisterPassError_xpath=//input[@name='./confirmpassworderror']
+
+######Registration_Form#######
+RegistrationFormConfDiv_xpath=//div[@data-path='/content/marsh/americas/us/en/registration-form/jcr:content/par/registrationform']
+EmailTextDiv_xpath=//input[@name='./emailaddresslabel']
+ConfPasswordDiv_xpath=//input[@name='./confirmpasswordlabel']
+JobTitle_xpath=//input[@name='./jobtitlelabel']
+IndustryTitle_xpath=//input[@name='./industrylabel']
+RelationshipTitle_xpath=//input[@name='./relationshiplabel']
+InvalidEmail_xpath=//input[@name='./invalidemailerror']
+RestrictedDomainemail_xpath=//input[@name='./blacklisterror']
+
+########Global_Feature_Area###
+MarshGlobal_xpath=//coral-columnview-item[@data-foundation-collection-item-id='/content/marsh/marsh']
+MarshGlobalImg_xpath=//coral-columnview-item[@data-foundation-collection-item-id='/content/marsh/marsh']/coral-columnview-item-thumbnail/img
+GlobalFeatureAreaParentDiv_xpath=//div[@data-path='/content/marsh/marsh/jcr:content/globalfeaturearea']
+GlobalText_xpath=//input[@name='./titleText']
+GlobalDescription_xpath=//input[@name='./descText']
+GlobalBackgroundImg_xpath=//div[@class='coral-TabPanel-pane coral-FixedColumn foundation-layout-util-vmargin is-active']/div/div[3]//button[@class='coral-Button coral-Button--square js-coral-pathbrowser-button']/i
+
+#######Mini_Header##########
+Comp_MiniHeaderConf_xpath=//div[@data-path='/content/marsh/marsh/jcr:content/miniheader']
+MiniHeader_Logo_xpath=//div[@class='coral-TabPanel-pane coral-FixedColumn foundation-layout-util-vmargin is-active']/div/div//button[@class='coral-Button coral-Button--square js-coral-pathbrowser-button']/i
+MiniHeader_Link_xpath=//div[@class='coral-TabPanel-pane coral-FixedColumn foundation-layout-util-vmargin is-active']/div/div[2]//button[@class='coral-Button coral-Button--square js-coral-pathbrowser-button']/i
+
+####C13_Video######
+SummerTRAC_xpath=//coral-columnview-item[@data-foundation-collection-item-id='/content/marsh/americas/us/en/careers/campusrecruiting/summer-trac']/coral-columnview-item-thumbnail/img
+VideoAuthConf_xpath=//div[@data-path='/content/marsh/americas/us/en/careers/campusrecruiting/summer-trac/jcr:content/leftpar/video']
+VideoThumbnailImage_xpath=//div[@class='coral-TabPanel-pane coral-FixedColumn foundation-layout-util-vmargin is-active']/div/div//button[@class='coral-Button coral-Button--square js-coral-pathbrowser-button']/i
+
+###C49_Column_Control###
+Home_xpath=//coral-columnview-item[@data-foundation-collection-item-id='/content/marsh/americas/us/en/home']/coral-columnview-item-thumbnail/img
+ColumnControlConf_xpath=//div[@data-path='/content/marsh/americas/us/en/home/jcr:content/par/columncontrol/col1/columncontrol']
+ColumnControlDropdown_xpath=//select[@name='./numberofcolumns']
+
+####C15_Quote_Text#####
+Services_xpath=//coral-columnview-item[@data-foundation-collection-item-id='/content/marsh/americas/us/en/services']	
+CasultyInsurance_xpath=//coral-columnview-item[@data-foundation-collection-item-id='/content/marsh/americas/us/en/services/casualty-insurance']
+Advisen_xpath=//coral-columnview-item[@data-foundation-collection-item-id='/content/marsh/americas/us/en/services/casualty-insurance/advisen-casualty-insights-conference-2016']/coral-columnview-item-thumbnail/img
+QuoteTextConf_xpath=//div[@data-path='/content/marsh/americas/us/en/services/casualty-insurance/advisen-casualty-insights-conference-2016/jcr:content/lefttrail/quotetext']
+Quote_xpath=//input[@name='./quote']
+Quotecheckbox_xpath=//input[@class='coral-Checkbox-input']
+
+####C46_iFrame######
+Campaigns_xpath=//coral-columnview-item[@data-foundation-collection-item-id='/content/marsh/americas/us/en/campaigns']
+iFramePage_xpath=//coral-columnview-item[@data-foundation-collection-item-id='/content/marsh/americas/us/en/campaigns/cyber-risk-infographic']/coral-columnview-item-thumbnail/img
+iFrameConf_xpath=//div[@data-path='/content/marsh/americas/us/en/campaigns/cyber-risk-infographic/jcr:content/par/iframe']
+SourcePath_xpath_xpath=//input[@name='./sourcePath']
+VerticalSize_xpath=//input[@name='./verticalSize']
+HorizontalSize_xpath=//input[@name='./horizontalSize']
+
+######C63_Basic_Feature_Area###########
+MarshPOV_xpath=//coral-columnview-item[@data-foundation-collection-item-id='/content/marsh/americas/us/en/marsh-pov-listing']
+BasicFeatureArea_xpath=//coral-columnview-item[@data-foundation-collection-item-id='/content/marsh/americas/us/en/marsh-pov-listing/the-significant-role-of-m-a-in-real-estate']/coral-columnview-item-thumbnail/img
+BasicFeatureAreaConfDiv_xpath=//div[@data-path='/content/marsh/americas/us/en/marsh-pov-listing/the-significant-role-of-m-a-in-real-estate/jcr:content/basicfeaturearea']
+BasicFeatureAreaHeader_xpath=//input[@name='./featureareatext']
+
+####G11_Basic_Header#####
+PVDPage_xpath=//coral-columnview-item[@data-foundation-collection-item-id='/content/marsh/americas/us/en/marsh-pvd']/coral-columnview-item-thumbnail/img
+BasicHeaderConfDiv_xpath=//div[@data-path='/content/marsh/americas/us/en/marsh-pvd/jcr:content/basicheader']
+BHLogo_xpath=//div[@class='coral-TabPanel-pane coral-FixedColumn foundation-layout-util-vmargin is-active']/div/div//button[@class='coral-Button coral-Button--square js-coral-pathbrowser-button']/i
+BHLink_xpath=//div[@class='coral-TabPanel-pane coral-FixedColumn foundation-layout-util-vmargin is-active']/div/div[2]//button[@class='coral-Button coral-Button--square js-coral-pathbrowser-button']/i
+
+####G12_Basic_Footer######
+BasicFooterConfDiv_xpath=//div[@data-path='/content/marsh/americas/us/en/marsh-pvd/jcr:content/basicfooter']
+BasicFooterCopyRightText_xpath=//input[@name='./footertext']
+
+#####C43_Bio_Detail#####
+OurPeople_xpath=//coral-columnview-item[@data-foundation-collection-item-id='/content/marsh/americas/us/en/careers/campusrecruiting/our-people']
+BioDetail_xpath=//coral-columnview-item[@data-foundation-collection-item-id='/content/marsh/americas/us/en/careers/campusrecruiting/our-people/mark']/coral-columnview-item-thumbnail/img
+BioDetailConfDiv_xpath=//div[@data-path='/content/marsh/americas/us/en/careers/campusrecruiting/our-people/mark/jcr:content/leftpar/biodetail']
+IntroText_xpath=//input[@name='./introtext']
+Person_xpath=//div[@class='coral-TabPanel-pane coral-FixedColumn foundation-layout-util-vmargin is-active']/div/div[2]//button[@class='coral-Button coral-Button--square js-coral-pathbrowser-button']/i
+BioDesc_xpath=//div[@data-config-path='/mnt/override/apps/marsh/components/content/biodetail/cq:dialog/content/items/tab1/items/columns/items/description.infinity.json']/h4
+
+#####RR19_Right_Rail_Text_Image########
+Sitemap_xpath=//coral-columnview-item[@data-foundation-collection-item-id='/content/marsh/americas/us/en/level3']
+Testing1_xpath=//coral-columnview-item[@data-foundation-collection-item-id='/content/marsh/americas/us/en/testing10']
+RR_xpath=//coral-columnview-item[@data-foundation-collection-item-id='/content/marsh/americas/us/en/rr']/coral-columnview-item-thumbnail/img
+RRTextImageConf_xpath=//div[@data-path='/content/marsh/americas/us/en/rr/jcr:content/rightrail/rightrailtextimage']
+AuthRRTIHeader_xpath=//input[@name='./header']
+AuthRRTIImage_xpath=//div[@class='coral-TabPanel-pane coral-FixedColumn foundation-layout-util-vmargin is-active']//li[1]//button[@class='coral-Button coral-Button--square js-coral-pathbrowser-button']/i
+AuthRRTIImageLink_xpath=//div[@class='coral-TabPanel-pane coral-FixedColumn foundation-layout-util-vmargin is-active']//li[1]//div/div[2]//button[@class='coral-Button coral-Button--square js-coral-pathbrowser-button']/i
+AuthRRTICheckbox_xpath=//div[@class='coral-TabPanel-pane coral-FixedColumn foundation-layout-util-vmargin is-active']//li[1]//div/div[3]//input[@type='checkbox']
+AuthRRTIDescription_xpath=//div[@class='coral-TabPanel-pane coral-FixedColumn foundation-layout-util-vmargin is-active']//li[1]//div/div[4]//div[@data-config-path='/mnt/override/apps/marsh/components/content/rightrailtextimage/cq:dialog/content/items/tab1/items/columns/items/textimageblock/field/items/column/items/description.infinity.json']/p
+
+####C64_POV_Article_Listing##
+POVListing_xpath=//coral-columnview-item[@data-foundation-collection-item-id='/content/marsh/americas/us/en/marsh-pov-listing']/coral-columnview-item-thumbnail/img
+POVListingDivConf_xpath=//div[@data-path='/content/marsh/americas/us/en/marsh-pov-listing/jcr:content/povarticlelisting']
+POVListingHeader_xpath=//input[@name='./header']
+POVListingIndustry_xpath=//input[@name='./industrylabel']
+POVListingService_xpath=//input[@name='./servicelabel']
+POVListingRiskIssue_xpath=//input[@name='./riskissuelabel']
+
+####C12_Background_Feature_Area######
+CyberRisk_xpath=//coral-columnview-item[@data-foundation-collection-item-id='/content/marsh/americas/us/en/campaigns/cyber-campaign1']/coral-columnview-item-thumbnail/img
+BFAPPBC_xpath=//div[@data-path='/content/marsh/americas/us/en/campaigns/cyber-campaign1/jcr:content/homefeaturedarea/par1/peopleblogcarousel_0']
+BFADropdown_xpath=//button[@data-action='PARENT']/i
+MainBFA_xpath=//ul[@class='cq-select-parent-list coral-List coral-List--minimal']/li[2]
+BackgroundFeatureAreaConf_xpath=//div[@data-path='/content/marsh/americas/us/en/campaigns/cyber-campaign1/jcr:content/homefeaturedarea'] 
+BFAHeader_xpath=//input[@name='./header']
+BFAHeaderTag_xpath=//select[@name='./headerTag']
+BFASubHeader_xpath=//input[@name='./subHeader']
+BFADescription_xpath=//textarea[@name='./description']
+BFANewTab_xpath=//div[@class='cq-dialog-content coral-TabPanel coral-TabPanel--large']/nav/a[2]
+BFABackgroundImage_xpath=//div[@class='coral-TabPanel-pane coral-FixedColumn foundation-layout-util-vmargin is-active']/div/div//button[@class='coral-Button coral-Button--square js-coral-pathbrowser-button']/i
+
+####C56_Level_Three_Feature_Area#####
+LevelThree_xpath=//coral-columnview-item[@data-foundation-collection-item-id='/content/marsh/americas/us/en/level3']/coral-columnview-item-thumbnail/img
+LevelThreeDivConf_xpath=//div[@data-path='/content/marsh/americas/us/en/level3/jcr:content/featureareapar/levelthreefeatureare']
+LevelThreeHeader_xpath=//input[@name='./level3header']
+LevelThreeHeaderTag_xpath=//select[@name='./level3headerTag']
+LevelThree2Tab_xpath=//div[@class='cq-dialog-content coral-TabPanel coral-TabPanel--large']/nav/a[2]
+LevelThreeCheckbox_xpath=//input[@name='./level3displayChild']
+LevelThreeView_xpath=//input[@name='./level3viewMore']
+LevelThree3Tab_xpath=//div[@class='cq-dialog-content coral-TabPanel coral-TabPanel--large']/nav/a[3]
+LevelThreeBI_xpath=//div[@class='coral-TabPanel-pane coral-FixedColumn foundation-layout-util-vmargin is-active']/div/div//button[@class='coral-Button coral-Button--square js-coral-pathbrowser-button']/i
+
+####C57_Level_Four_Feature_Area###########
+LevelFourDivConf_xpath=//div[@data-path='/content/marsh/americas/us/en/rr/jcr:content/mainbody/levelfourfeaturearea']
+LevelFourHeader_xpath=//input[@name='./level4header']
+LevelFourHeaderTag_xpath=//select[@name='./level4headerTag']
+LevelFour2Tab_xpath=//div[@class='cq-dialog-content coral-TabPanel coral-TabPanel--large']/nav/a[2]
+LevelFourCheckbox_xpath=//input[@name='./level4displayChild']
+LevelFourView_xpath=//input[@name='./level4viewMore']
+
+
+
+####C54_Level_One_Feature_Area###########
+Research&BriefingsLvlOne_xpath=//coral-columnview-item[@data-foundation-collection-item-id='/content/marsh/americas/us/en/insights/research']/coral-columnview-item-thumbnail/img
+LevelOneDivConf_xpath=//div[@data-path='/content/marsh/americas/us/en/insights/research/jcr:content/featurearea']
+LevelOneHeader_xpath=//input[@name='./header']
+LevelOneDescriptionTag_xpath=//div[@data-config-path='/mnt/override/apps/marsh/components/content/levelonefeaturearea/cq:dialog/content/items/tab1/items/columns/items/description.infinity.json']/p
+LevelOneLeftButton_xpath=//input[@name='./leftButtonLabel']
+LevelOneLeftButtonPath_xpath=//div[@class='coral-TabPanel-pane coral-FixedColumn foundation-layout-util-vmargin is-active']/div/div[4]//button[@class='coral-Button coral-Button--square js-coral-pathbrowser-button']/i
+LevelOneRightButton_xpath=//input[@name='./rightButtonLabel']
+LevelOneRightButtonPath_xpath=//div[@class='coral-TabPanel-pane coral-FixedColumn foundation-layout-util-vmargin is-active']/div/div[7]//button[@class='coral-Button coral-Button--square js-coral-pathbrowser-button']/i
+LevelOneTab2_xpath=//div[@class='cq-dialog-content coral-TabPanel coral-TabPanel--large']/nav/a[2]
+LevelOneTab3_xpath=//div[@class='cq-dialog-content coral-TabPanel coral-TabPanel--large']/nav/a[3]
+LevelOneBackgrndStyle_xpath=//div[@class='coral-TabPanel-pane coral-FixedColumn foundation-layout-util-vmargin is-active']/div/div//button[@class='coral-Button coral-Button--square js-coral-pathbrowser-button']/i
+
+
+
+####C06_Feature_Area###########
+
+FeatArea_xpath=//coral-columnview-item[@data-foundation-collection-item-id='/content/marsh/americas/us/en/sitemap-us']/coral-columnview-item-thumbnail/img
+FeatAreaDivConf_xpath=//div[@data-path='/content/marsh/americas/us/en/sitemap-us/jcr:content/featureareapar/featurearea']
+FeatAreaHeaderTag_xpath=//select[@name='./headerTag']
+FeatAreaHeader_xpath=//input[@name='./header']
+FeatAreaRTE_xpath=//div[@data-config-path='/mnt/override/apps/marsh/components/content/featurearea/cq:dialog/content/items/tab1/items/columns/items/description.infinity.json']/p
+FeatAreaLeftButton_xpath=//input[@name='./leftButtonLabel']
+FeatAreaLeftButtonPath_xpath=//div[@class='coral-TabPanel-pane coral-FixedColumn foundation-layout-util-vmargin is-active']/div/div[5]//button[@class='coral-Button coral-Button--square js-coral-pathbrowser-button']/i
+FeatAreaRightButton_xpath=//input[@name='./rightButtonLabel']
+FeatAreaRightButtonPath_xpath=//div[@class='coral-TabPanel-pane coral-FixedColumn foundation-layout-util-vmargin is-active']/div/div[8]//button[@class='coral-Button coral-Button--square js-coral-pathbrowser-button']/i
+FeatAreaTab2_xpath=//div[@class='cq-dialog-content coral-TabPanel coral-TabPanel--large']/nav/a[2]
+FeatAreaTab3_xpath=//div[@class='cq-dialog-content coral-TabPanel coral-TabPanel--large']/nav/a[3]
+FeatAreaBackgrndStyle_xpath=//div[@class='coral-TabPanel-pane coral-FixedColumn foundation-layout-util-vmargin is-active']/div/div//button[@class='coral-Button coral-Button--square js-coral-pathbrowser-button']/i
+
+
+####C50_Event_Feature_Area###########
+
+Events_xpath=//coral-columnview-item[@data-foundation-collection-item-id='/content/marsh/americas/us/en/events']
+EventFeatureArea_xpath=//coral-columnview-item[@data-foundation-collection-item-id='/content/marsh/americas/us/en/events/multifamily-and-student-housing-seminar']/coral-columnview-item-thumbnail/img
+EventFeatureAreaDivConf_xpath=//div[@data-path='/content/marsh/americas/us/en/events/multifamily-and-student-housing-seminar/jcr:content/eventfeaturearea']
+EventInfo_xpath=//div[@class='coral-TabPanel-pane coral-FixedColumn foundation-layout-util-vmargin is-active']/div/div[1]//button[@class='coral-Button coral-Button--square js-coral-pathbrowser-button']/i
+EventFeatureAreaTab2_xpath=//div[@class='cq-dialog-content coral-TabPanel coral-TabPanel--large']/nav/a[2]
+EventFeatureAreaRTE_xpath=//div[@data-config-path='/mnt/override/apps/marsh/components/content/eventfeaturearea/cq:dialog/content/items/tab2/items/columns/items/rightareatext.infinity.json']/p
+EventFeatureAreaTab3_xpath=//div[@class='cq-dialog-content coral-TabPanel coral-TabPanel--large']/nav/a[3]
+EventFeatureAreaBI_xpath=//div[@class='coral-TabPanel-pane coral-FixedColumn foundation-layout-util-vmargin is-active']/div/div//button[@class='coral-Button coral-Button--square js-coral-pathbrowser-button']/i
+
+
+####C39_Event_Detail###########
+
+EventDetailConf_xpath=//div[@data-path='/content/marsh/americas/us/en/events/multifamily-and-student-housing-seminar/jcr:content/eventdetail']
+EventDetailMessage_xpath=//div[@class='coral-FixedColumn-column']/section/h3
+
+
+####C03_Banner_Callout###########
+
+BannerCalloutConf_xpath=//div[@data-path='/content/marsh/americas/us/en/home/jcr:content/par/bannercallout_0']
+BannerCalloutHeader_xpath=//input[@name='./header']
+BannerCalloutDescription_xpath=//textarea[@name='./description']
+BannerCalloutLink_xpath=//div[@class='coral-TabPanel-pane coral-FixedColumn foundation-layout-util-vmargin is-active']/div/div[3]//button[@class='coral-Button coral-Button--square js-coral-pathbrowser-button']/i
+BannerCalloutButton_xpath=//input[@name='./buttonlabel']
+BannerCalloutDesktopImage_xpath=//div[@class='coral-TabPanel-pane coral-FixedColumn foundation-layout-util-vmargin is-active']/div/div[6]//button[@class='coral-Button coral-Button--square js-coral-pathbrowser-button']/i
+BannerCalloutTabletImage_xpath=//div[@class='coral-TabPanel-pane coral-FixedColumn foundation-layout-util-vmargin is-active']/div/div[7]//button[@class='coral-Button coral-Button--square js-coral-pathbrowser-button']/i
+BannerCalloutMobileImage_xpath=//div[@class='coral-TabPanel-pane coral-FixedColumn foundation-layout-util-vmargin is-active']/div/div[8]//button[@class='coral-Button coral-Button--square js-coral-pathbrowser-button']/i
+
+
+####C33_Navigation_Feature_Area###########				
+				
+NavFeatureArea_xpath=//coral-columnview-item[@data-foundation-collection-item-id='/content/marsh/americas/us/en/userinfoexport']/coral-columnview-item-thumbnail/img				
+NavFeatureAreaConf_xpath=//div[@data-path='/content/marsh/americas/us/en/userinfoexport/jcr:content/featureareapar/navigationfeatureare']				
+NavFeatureAreaHeader_xpath=//input[@name='./header']				
+NavFeatureAreaCheckbox_xpath=//input[@name='./subpage']				
+NavFeatureAreaHeaderTag_xpath=//select[@name='./headertag']				
+NavFeatureAreaTab2_xpath=//div[@class='cq-dialog-content coral-TabPanel coral-TabPanel--large']/nav/a[2]				
+NavFeatureAreaBackgroundImage_xpath=//div[@class='coral-TabPanel-pane coral-FixedColumn foundation-layout-util-vmargin is-active']/div/div[1]//button[@class='coral-Button coral-Button--square js-coral-pathbrowser-button']/i				
+
+
+####C10_Header_Feature_Area###########				
+				
+HeaderFeatureArea_xpath=//coral-columnview-item[@data-foundation-collection-item-id='/content/marsh/americas/us/en/export-contactus']/coral-columnview-item-thumbnail/img				
+HeaderFeatureAreaConf_xpath=//div[@data-path='/content/marsh/americas/us/en/export-contactus/jcr:content/mainbody/headerfeaturearea']				
+HeaderFeatureAreaHeader_xpath=//input[@name='./header']				
+HeaderFeatureAreaSubHeader_xpath=//input[@name='./subHeader']				
+HeaderFeatureAreaHeaderTag_xpath=//select[@name='./headerTag']				
+HeaderFeatureAreaTab2_xpath=//div[@class='cq-dialog-content coral-TabPanel coral-TabPanel--large']/nav/a[2]				
+HeaderFeatureAreaBackgroundImage_xpath=//div[@class='coral-TabPanel-pane coral-FixedColumn foundation-layout-util-vmargin is-active']/div/div[1]//button[@class='coral-Button coral-Button--square js-coral-pathbrowser-button']/i				
+#########################
+PreviewButton_xpath= //button[@id= 'cq-gen214']
+AEMMinimizePopUp_xpath=//div[@class='x-tool x-tool-toggle']
+AEMCancelButton_xpath=//button[@class=' x-btn-text' and contains(text(),'Cancel')]
+AEMOKButton_xpath=//button[@class=' x-btn-text' and contains(text(),'OK')]
+MinimizePreview_xpath=//div[@class='x-window-tc']/div/div[2]
+Continue_Without_PopUp_xpath=//form[@id='optInModal']/div[2]/div[2]/div/input
+TermAndConditionsPopUp_css=#modalWindow > #dynPolicyModal > div.c-modal-message__inner > div.c-modal-message__body > div.c-modal-message__body-ui > button.c-modal-message__body-ui-confirm
+ExternalLinkPopUp_css=#modalWindow > #dynDialogModal > div.c-modal-message__inner > div.c-modal-message__body > div.c-modal-message__body-ui > button.c-modal-message__body-ui-confirm
+iframe_id=cq-cf-frame
+iframeRRVideo_xpath=//*[@id='modalWindow']/div/iframe
+iframeTagbord_xpath=//iframe[@class='tagboard-iframe']
+
+#####Promo Teaser carousel Latest News #######
+PromoCarouselConf_xpath=//div[@data-path='/content/marsh/americas/us/en/home/jcr:content/par/promocarousel']
+ReadMoreLink_xpath=//input[@name='./linklabel']
+LatestNewsConf_xpath=//div[@data-path='/content/marsh/americas/us/en/latestnews/jcr:content/leftbody/latestnews']
+LatestNewsHeaderText_xpath=//input[@name='./header']
+TeaserCarouselConf_xpath=//div[@data-path='/content/marsh/americas/us/en/latestnews/jcr:content/leftbody/teasercarousel']
+TeaserCarouselText_xpath=//input[@name='./header']
+
+###Blog Item####
+BlogItemConf_xpath=//div[@data-path='/content/marsh/americas/us/en/insights/risk-in-context/jcr:content/blog_listing']
+MaxBlogItem_xpath=//input[@name='./maxblogs']
+BlogHeader_xpath=//input[@name='./header']
+FeaturedBlog_xpath=//input[@name='./blogitemlabel']
+Pre-FilteredMessage_xpath=//input[@name='./prefiltermessage']
+ClearFilter_xpath=//input[@name='./clearfilterlabel']
+
+###Contact Us#####
+ContactUsDiv_xpath=//div[@class=' cq-element-contactusform']
+ContactUsEdit_xpath=//div[@class=' cq-element-contactusform']/p
+ContactUsBox_xpath=//div[@class='x-window-body']/div/div/div/ul/li/a[2]/em
+
+#######Text and Image####
+TextImageConf_xpath=//div[@data-path='/content/marsh/americas/us/en/services/workers-compensation/workers-compensation-loss-profile/jcr:content/textandimage']
+TextImageTitle_xpath=//input[@name='./title']
+TextImageAltText_xpath=//input[@name='./alt']
+TextImageDropDown_xpath=//select[@name='./selection']
+TextImageAlignment_xpath=//ul[contains(@class,'is-visible')]//li[@aria-selected='false']
+
+
+#######RR05_Right_Rail_Premium_Content####								
+ResrchBreif_xpath=//coral-columnview-item[@data-foundation-collection-item-id='/content/marsh/americas/us/en/insights/research']								
+RightRailPremiumContentPage_xpath=//coral-columnview-item[@data-foundation-collection-item-id='/content/marsh/americas/us/en/insights/research/Latin-america-caribbean-insurance-market-report-2014']/coral-columnview-item-thumbnail/img								
+RightRailPremiumContentConf_xpath=//div[@data-path='/content/marsh/americas/us/en/insights/research/Latin-america-caribbean-insurance-market-report-2014/jcr:content/rightbody']								
+RightRailPremiumContentHeader_xpath=//input[@name='./header']								
+RightRailPremiumContentDecription_xpath=//input[@name='./description']								
+RightRailPremiumContentTab2_xpath=//div[@class='cq-dialog-content coral-TabPanel coral-TabPanel--large']/nav/a[2]								
+RightRailPremiumContentDownloadText_xpath=//input[@name='./pdfdownloadtext']								
+
+
+########Adaptive Form########
+CanadaCountry_xpath=//a[contains(text(),'Canada')]
+AdaptiveFormSelection_xpath=//a[contains(text(),'forml')]
+AdaptiveRRFormSelection_xpath=//a[@href='/ca/en/services/private-client-services1.html']
+GuideHelpMark_xpath=//div[@class='guideHelpQuestionMark']
+AdaptiveFormSubmit_xpath=//button[@id='guideContainer-rootPanel-submit___widget']
+AdaptiveFirstNameError_xpath=//div[@class='guideFieldError']
+AdaptiveEmailError_xpath=//div[@class='guideFieldNode  guideTextBox email              defaultFieldLayout validation-failure']//div[@class='guideFieldError']
+AdaptiveTelephoneError_xpath=//div[@class='guideFieldNode  guideTextBox officetelephone              defaultFieldLayout validation-failure']//div[@class='guideFieldError']
+AdaptiveFirstName_xpath=//input[@id='guideContainer-rootPanel-guidetextbox___widget']
+AdaptiveLastName_xpath=//textarea[@id='guideContainer-rootPanel-guidetextbox_1046426766___widget']
+AdaptiveEmail_xpath=//input[@id='guideContainer-rootPanel-guidetextbox_920672763___widget']
+AdaptiveTelephone_xpath=//input[@id='guideContainer-rootPanel-guidetextbox_990729637___widget']
+AdaptiveCountry_xpath=//div[@class='guideFieldWidget dropDownList']/select
+AdaptiveCountrySelection_xpath=//div[contains(@class,'guideFieldNode  guideDropDownList country')]//select/option
+AdaptiveMarshClaim_xpath=//label[@for='guideContainer-rootPanel-marshdropdown_1259607714___widget']
+AdaptiveCheckBox_xpath=//input[@id='guideContainer-rootPanel-marshcheckbox___1_widget']
+AdaptiveRadio1_xpath=//input[@id='guideContainer-rootPanel-marshradiobutton__-1_widget']
+AdaptiveRadio2_xpath=//input[@id='guideContainer-rootPanel-marshradiobutton__-2_widget']
+AdaptivePolicyCalender_xpath=//div[@class='datepicker-calendar-icon']
+AdaptivePolicyDateSelection_xpath=//div[@class='view dp-monthview']//li[contains(@class,'dp-focus')]
+AdaptiveSucessText1_xpath=//div[@class='responseContainer']/h1
+AdaptiveSucessText2_xpath=//div[@class='responseContainer']/p
+
+####CokiePolicy and Press_Config######
+CookiePolicyConf_xpath=//div[@data-path='/content/marsh/americas/us/en/jcr:content/optincookiepolicy']
+CookiePolicyDays_xpath=//input[@name='./cookieacceptancenumberofdays']
+CookiePolicyTitle_xpath=//input[@name='./cookiepolicymodaltitle']
+CookiePolicyRadioLabel_xpath=//input[@name='./cookieselectionlabel']
+CookiePolicySave_xpath=//input[@name='./savebuttontitle']
+CookiePolicyLabel_xpath=//input[@name='./cookiecategorylabel']
+CookieDetailsTitle_xpath=//input[@name='./cookiedetailstitle']
+
+CookiePolicyDetails_xpath=//div[@class='view-details']/span
+PerformantCookie_xpath=//input[@id='PerformantInput']
+FunctionalCookie_xpath=//input[@id='FunctionalInput']
+StrictlyNecessaryCookie_xpath=//input[@id='StrictlyNecessaryInput']
+CookieModalCancel_xpath=//form[@id='optInModal']/div[2]/div[2]/div/p
+
+RSSFeedImage_xpath=//main/div[3]/div/div/div/p/span/a/img
+PressReleaseConf_xpath=//div[@data-path='/content/marsh/americas/us/en/jcr:content/pressreleaseconfig']
+PressReleaseText_xpath=//div[@class='coral-RichText-editable coral-Form-field coral-Textfield coral-Textfield--multiline coral-RichText is-edited webkit chrome']/p
+PressReleaseText2_xpath=//div[@class='coral-RichText-editable coral-Form-field coral-Textfield coral-Textfield--multiline coral-RichText is-edited webkit chrome']/p[2]
+
+PressHeader_xpath=//h3
+PressReleaseContent_xpath=//div[@id='media']/article
+PressReleaseSelection_xpath=//div[@id='media']/article[5]/div/div/h2/a
+PressReleaseHeader_xpath=//section[@class='common-content']/p/b
+PressReleaseSubHeader_xpath=//section[@class='common-content']/p[10]
+PressMarshLink_xpath=//section[@class='common-content']/p[10]/a
+Marsh&McLennanCompaniesLink_xpath=//section[@class='common-content']/p[10]/a[2]
+GuyCarpenterLink_xpath=//section[@class='common-content']/p[10]/a[3]
+MercerLink_xpath=//section[@class='common-content']/p[10]/a[4]
+OliverWymanLink_xpath=//section[@class='common-content']/p[10]/a[5]
+TwitterMarshLink_xpath=//section[@class='common-content']/p[10]/a[6]
+FacebookLink_xpath=//section[@class='common-content']/p[10]/a[8]
+YouTubeLink_xpath=//section[@class='common-content']/p[10]/a[9]
+
+###Insights RSS Feed##########
+InsightsRSSConf_xpath=//div[@data-path='/content/marsh/americas/us/en/insights-ric-rss/jcr:content/insightsrssfeed']
+InsightsHeader_xpath=//input[@name='./header']
+InsightsBrinknews_xpath=//input[@name='./brinknewspath']
+
+
+####Export and Import Contact Us data######
+ExportContactUsConf_xpath=//div[@data-path='/content/marsh/americas/us/en/export-contactus/jcr:content/leftbody/contactusinfoexport']
+ExportGroupName_xpath=//input[@name='./authgroup']
+ExportContactUsButton_xpath=//a[@id='contactusdata']
+ExportContactUsName_xpath=//div[@style='overflow-x:auto;']/table/tbody/tr/th
+ExportContactUsCompany_xpath=//div[@style='overflow-x:auto;']/table/tbody/tr/th[6]
+ExportContactUsDate_xpath=//div[@style='overflow-x:auto;']/table/tbody/tr/th[15]
+
+ImportContactUsConf_xpath=//div[@data-path='/content/marsh/americas/us/en/import-contactus/jcr:content/leftbody/contactusinfoimport']
+ImportGroupName_xpath=//input[@name='./authgroup']
+ImportContactUsText_xpath=//div[@class='contactusinfoimport section']/div/div/h3
+ImportChooseFile_xpath=//input[@id='csvPath']
+ImportButton_xpath=//input[@id='importbutton']
+ImportText_xpath=//div[@class='totalresult']/b
+
+####Exit and Entry Ramp#######
+ExitRampConf_xpath=//div[@data-path='/content/marsh/americas/us/en/jcr:content/exitrampoverlay']
+ExitRampHeader_xpath=//input[@name='./header']
+ExitRampText_xpath=//div[@class='coral-RichText-editable coral-Form-field coral-Textfield coral-Textfield--multiline coral-RichText is-edited webkit chrome']/p
+
+EntryRampConf_xpath=//div[@data-path='/content/marsh/americas/us/en/contact-us/jcr:content/rightrail/entryrampoverlay']
+EntryRampHeader_xpath=//input[@name='./header']
+EntryRampText_xpath=//div[@class='coral-RichText-editable coral-Form-field coral-Textfield coral-Textfield--multiline coral-RichText is-edited webkit chrome']/p
+
+###Right Rail Components##
+
+RRBioConf_xpath=//div[@data-path='/content/marsh/americas/us/en/insights/risk-in-context/three-key-risks-communications--media--and-technology-companies-/jcr:content/blogItem_rightRail_par/rightrailbio']
+RRBioBoxHeader_xpath=//input[@name='./headLineText']
+RRImageConf_xpath=//div[@data-path='/content/marsh/americas/us/en/insights/risk-in-context/three-key-risks-communications--media--and-technology-companies-/jcr:content/blogItem_rightRail_par/rightrailimage']
+
+RRPdfConf_xpath=//div[@data-path='/content/marsh/americas/us/en/services/client-market-technologies/marsh-connect-help/jcr:content/rightrail/rightrailpdfdownload']
+RRPdfHeader_xpath=//input[@name='./header']
+RRPdfViewLabel_xpath=//input[@name='./viewMore']
+RRPdfTitle1_xpath=//input[@name='./pdfTitle']
+RRPdfTitle3_xpath=//ol[@class='coral-Multifield-list js-coral-Multifield-list']/li[3]//input[@name='./pdfTitle']
+
+RightRailHorizontalConf_xpath=//div[@data-path='/content/marsh/americas/us/en/industries/hospitality-gaming/jcr:content/rightrail/rightrailhorizontalh']
+RightRailVerticalConf_xpath=//div[@data-path='/content/marsh/americas/us/en/industries/hospitality-gaming/jcr:content/rightrail/rightrailverticalhig']
+
+RRVideoConf_xpath=//div[@data-path='/content/marsh/americas/us/en/careers/jcr:content/rightrail/rightrailvideo_0']
+RRVideoTitle_xpath=//input[@name='./videoTitle']
+RRVideoDescription_xpath=//input[@name='./videoDescription']
+
+RightRailContactUsConf_xpath=//div[@data-path='/content/marsh/americas/us/en/industries/communications-media-technology/jcr:content/rightrail/rightrailcontactus']
+RightRailContactUsLabel_xpath=//input[@name='./contactuslabel']
+
+RightRailTextConf_xpath=//div[@data-path='/content/marsh/americas/us/en/contact-us/jcr:content/rightrail/rightrailtext']
+RightRailTextHeader_xpath=//input[@name='./header']
+RightRailTextDescription_xpath=//div[@class='richtext-container']/div[2]/p
+
+RightRailSocialLinksConf_xpath=//div[@data-path='/content/marsh/americas/us/en/about-marsh/what-we-do/jcr:content/rightrail/rightrailsociallinks']
+
+ScrollTagboard_xpath=//coral-columnview-column[@data-foundation-layout-columnview-columnid='/content/marsh/americas/us/en/insights/research']/coral-columnview-column-content/coral-columnview-item
+RRTagbordConf_xpath=//div[@data-path='/content/marsh/americas/us/en/insights/research/the-global-risks-report-2017/jcr:content/rightpar/tagboard']
+RRTagboardPath_xpath=//input[@name='./tagboardlocationpath']
+RRTagboardCount_xpath=//input[@name='./postcount']
+RRTagboardMCount_xpath=//input[@name='./mobilepostcount']
+
+####HTML Editor#####
+HTMLConf_xpath=//div[@data-path='/content/marsh/americas/us/en/htmleditor/jcr:content/par/htmleditor']
+HTMLText_xpath=//textarea[@class='coral-Form-field foundation-layout-util-resizable-none coral-Textfield coral-Textfield--multiline']
+
+####Html Editor#######
+Heading1_xpath=//div[@class='htmleditor section']/h1
+Heading2_xpath=//div[@class='htmleditor section']/h2
+Heading3_xpath=//div[@class='htmleditor section']/h3
+Heading4_xpath=//div[@class='htmleditor section']/h4
+Heading5_xpath=//div[@class='htmleditor section']/h5
+Heading6_xpath=//div[@class='htmleditor section']/h6
+
+#####Shared People List######
+SharedPeopleListConf_xpath=//div[@data-path='/content/marsh/americas/us/en/htmleditor/jcr:content/par/sharedpeoplelist']
+
+
+###Country Selector####
+CountrySelectorConf_xpath=//div[@data-path='/content/marsh/americas/ca/en_ca/jcr:content/countryselector']
+CountrySelectorCheckBox_xpath=//div[contains(@class,'is-active')]//span[@class='coral-Checkbox-checkmark']
+CountrySelectorCountryName_xpath=//input[@name='./countryName']
+CountrySelectorCountrySName_xpath=//input[@name='./countryShortName']
+CountrySelectorCountryTitle_xpath=//input[@name='./languageDropdownTitle']
+CurrentLanguage_xpath=//div[contains(@class,'is-active')]/div/div[2]/div[5]//div/div[4]//span[@class='coral-Checkbox-checkmark']
+
+#####Twitter Feed#####
+TwitterFeedConf_xpath=//div[@data-path='/content/marsh/americas/us/en/jcr:content/footer/twitterfeed']
+TwitterFeedChechbox_xpath=//div[contains(@class,'is-active')]/div/div//span[@class='coral-Checkbox-checkmark']
+TwitterUsername_xpath=//input[@name='./username']
+TwitterRefreshTime_xpath=//input[@name='./tweetSpeed']
+
+####Global Dropdowns######
+GlobalDropdownsConf_xpath=//div[@data-path='/content/marsh/marsh/jcr:content/globalfeaturearea/globaldropdown']
+GlobalHeader_xpath=//input[@name='./header']
+GlobalCanada_xpath=//div[contains(@class,'coral-FixedColumn foundation-layout-util-vmargin is-active')]//ol//li//ol//li[3]//button[@class='coral-Button coral-Button--square js-coral-pathbrowser-button']/i
+GlobalNewZealand_xpath=//div[contains(@class,'coral-FixedColumn foundation-layout-util-vmargin is-active')]//ol//li[2]//ol//li[10]//button[@class='coral-Button coral-Button--square js-coral-pathbrowser-button']/i
+GlobalGermany_xpath=//div[contains(@class,'coral-FixedColumn foundation-layout-util-vmargin is-active')]//ol//li[3]//ol//li[12]//button[@class='coral-Button coral-Button--square js-coral-pathbrowser-button']/i
+
+
+########################################### Publish Environment Locators ############################################################
+Login_Button_xpath=//a[@id='marshPortalButton']
+Publish_username_id=emailAddress
+Client_username_id=uidButton
+Publish_password_id=logPassword
+Client_password_id=pwdButton
+Publish_SigninButton_id=loginButton
+InsPageLogIn_id=rightRailLogin
+ForgotPassword_xpath=//form[@id='logInModal']/div[5]/div/div/a
+Register_xpath=//form[@id='logInModal']/div[5]/div/div/a[2]
+SignOut_xpath=//button[@id= 'signOutButton']
+Register_Button_xpath=//input[@id='registerButton']
+Register_Text_xpath=//h1
+TroubleloggingIn_xpath=//h2
+TempPassText_xpath=//section/div/div/p
+ResetSubmit_id=resetButton
+PassErrorMes_xpath=//span[@id='messageText']
+
+###Header & Footer ####
+MarsLogo_xpath=//div[@class='logo-container']/a/img
+Insights_xpath=//li/ul/li/a
+RiskContext_xpath=//ul/li/ul/li/div/div/div/ul/li[2]/a
+Ind&Service_xpath=//li/ul/li[2]/a
+Mining_xpath=//a[contains(text(),'Mining')]
+Client&MarketTech_xpath=//a[contains(text(),'Client and Market Technologies')]
+WorkersCompensationLink_xpath=//a[contains(text(),'Compensation')]
+AboutMarsh_xpath=//li/ul/li[3]/a
+RICLink_xpath=//li/div/div/div/ul/li[3]/a
+PublicEntity_xpath=//li[2]/div/div/div/ul[2]/li[3]/a
+HandBurgerMenu_xpath=//a/div
+MenuContactUs_xpath=//a[contains(text(),'CONTACT US')]
+MenuMediaCenter_xpath=//a[contains(text(),'MEDIA CENTER')]
+MenuCareers_xpath=//a[contains(text(),'CAREERS')]
+
+SocialTab_xpath=//div[@class='social-module-container']
+Twitter_xpath=//ul[@class='social-nav']/li[2]
+Facebook_xpath=//ul[@class='social-nav']/li[3]
+YouTube_xpath=//ul[@class='social-nav']/li[4]
+
+FooterLogo_xpath=//div[@class='logo-container large-4 columns']/a/img
+MarshFooter_xpath=//ul[@class='optco-list']/li[1]
+GuyCarpenter_xpath=//ul[@class='optco-list']/li[2]
+Mercer_xpath=//ul[@class='optco-list']/li[3]
+OliverWayman_xpath=//ul[@class='optco-list']/li[4]
+
+CopyRightText_xpath=//div[@class='copyright medium-5 columns']
+TermsOfUser_xpath=//ul[@class='policy-links']/li[1]/a
+Privacypolicy_xpath=//ul[@class='policy-links']/li[2]/a
+SiteMap_xpath=//ul[@class='policy-links']/li[3]/a
+Careers_xpath=//ul[@class='policy-links']/li[4]/a
+ContactUs_xpath=//ul[@class='policy-links']/li[5]/a
+CookieModal_xpath=//ul[@class='policy-links']/li[6]/a
+
+###### Search ##
+Search_id=utilitySearch
+SearchResultText_xpath=//h1
+SearchResultFilter_xpath=//div[@class='filter-wrap']/div/p
+SearchColum_xpath=//span[@id='search-term']
+EnterKeywords_xpath=//input[@class='keyword-search']
+Industry_xpath=//dt[@class='current-filter has-sub']
+IndustrySelection_xpath=//dd[@class='sub-menu open']/ul/li/a
+PublishedOn_id=datepicker1
+OrBefore_id=datepicker2
+SearchButton_id=contactButton
+SearchArticles_xpath=//div[@class='resources-container infinite-scroll-container large-12 columns']/article
+
+###### Team Listing ##
+Leadership_linktext=Leadership
+LeadershipText_xpath=//h1
+TeamLink_xpath=//article[@class='about-us-summary']/a
+GlobalLead_xpath=//article/a
+USLead_xpath=//a[2]
+GlobalLeadLinks_xpath=//div[@id='Global Leadership0']/ul/li/div/h4
+USLeadLinks_xpath=//div[@id='US Leadership1']/ul/li/div/h4
+
+##### MY APPLICATIONS##
+WlcmPortal_xpath=//div[@class='richtext section']/div/h3
+MyAppLinks_xpath=//div[@class='app-link']
+MyApplication_xpath=//a[@id='marshPortalButton']
+
+######  Content Listing #####
+ContentDiv_xpath=//div[@id='cq-gen11']
+WelcomeUser_xpath=//div[@id='welcome_user']/h1
+
+ContentSection_xpath=//section[@class='article-resources']
+ContentListing_Header_xpath=//div[@class='medium-7 columns']/h3
+Content_Filters_xpath=//dl[@class='filter-container']
+Content_List_xpath=//button[@id='list']
+Content_Grid_xpath=//button[@id='grid']
+ContentPages_xpath=//div[@class='article-copy']/h2/a
+
+Industry_Filter_xpath=//dl[@id='filter0']
+Industry_Box_xpath=//dl[@id='filter0']/dd/ul/li
+Services_Filter_xpath=//dl[@id='filter1']
+Services_Box_xpath=//dl[@id='filter1']/dd/ul/li
+RiskIssue_Filter_xpath=//dl[@id='filter2']
+RiskIssue_Box_xpath=//dl[@id='filter2']/dd/ul/li
+ClearAll_Filter_xpath=//a[@id='clearAll']
+
+#######  REGISTER & FORGOT PASSWORD ###
+FirstName_id=givenName
+LastName_id=familyName
+JobTitle_id=jobtitle
+Telephone_id=telephone
+Email_Address_id=regEmailAddress
+EmailError_xpath=//label[@id='regEmailAddress-error']
+Confirm_Email_id=confirmEmail
+ConfirmEmailError_xpath=//label[@id='confirmEmail-error']
+ToolTip_xpath=//div[@class= 'tooltip']
+EnterPassword_id=entryPassword
+ConfirmPassword_id=confirmPassword
+CompanyName_id=companyname
+Industry_id=industry
+IndustryBox_xpath=//select[@id='industry']/option
+CountrySelection_id=countrySelection
+Region_id=region
+Relationship_id=relationship
+Captcha_xpath=//div[@id='g-recaptcha']/div/div
+TermAndCondition_xpath=//input[@id='policies']
+ErrorLabel_xpath=//label[@class='error-flag']
+TermAndConditionLink_xpath=//a[contains(text(),'Terms and Conditions') and @target='_blank']
+CookiePolicyLink_xpath=//div[@class='row policy-check']/div/a[2]
+######## Shared People #########################
+#People##
+PrevLink_xpath=//span[@class='slide-prev']
+PBCImage_xpath=//div[@class='slick-track']/div[8]/div/a/img
+PBCFullName_xpath=//div[@class='slide slick-slide slick-active' and @index='5']/div/div/h2
+PBCRUni_xpath=//div[@class='slide slick-slide slick-active' and @index='5']/div/div/p[2]
+PBCTitle_xpath=//div[@class='slide slick-slide slick-active' and @index='5']/div/div/p[3]
+
+###Right Rail##
+RRImage_xpath=//a[@class='no-anchor']/img
+RRFullName_xpath=//div[@class='tbl']/div/h3/a
+RRRUni_xpath=//div[@class='tbl']/div/p[2]
+RRTitle_xpath=//div[@class='tbl']/div/p[3]
+
+##Listing Leadership ####
+LLImage_xpath=//div[@id='US Leadership1']/ul/li[6]/img
+LLFullName_xpath=//div[@id='US Leadership1']/ul/li[6]/div/h4
+LLTitle_xpath=//div[@id='US Leadership1']/ul/li[6]/div/p
+
+##Listing Recruting ####
+LRImage_xpath=//div[@class='our-people']/ul/li[9]/img
+LRName_xpath=//div[@class='our-people']/ul/li[9]/div/h4
+LRRUni_xpath=//div[@class='our-people']/ul/li[9]/div/p
+LRTitle_xpath=//div[@class='our-people']/ul/li[9]/div/p[2]
+
+##Leadership Detail ####
+LDImage_xpath=//div[@class='leadership-detail']/img
+LDTitle_xpath=//div[@class='leadership-detail']/p
+
+##Bio Detail ####
+BDImage_xpath=//figure/img
+BDName_xpath=//figure/div/h4
+BDRUni_xpath=//figure/div/p
+BDTitle_xpath=//figure/div/p[2]
+
+BRRImage_xpath=//div[@class='box']/img
+BRRName_xpath=//div[@class='box']/div/div/p[2]
+BRRTitle_xpath=//div[@class='box']/div/div/p[3]
+
+ASImage_xpath=//div[@class='profile-pic']/img
+ASName_xpath=//div[@class='profile-pic']/p
+ASTitle_xpath=//div[@class='profile-pic']/p[2]
+
+BIImage_xpath=//div[@class='author-box']/img
+BIName_xpath=//div[@class='author-box']/h4
+BIBio_xpath=//div[@class='author-box']/p
+
+AttendeeName_xpath=//p[contains(text(),'Rajender')]
+ALImage_xpath=//div[@id='modalWindow']/div/img
+ALName_xpath=//div[@id='modalWindow']/div/div/p
+ALTitle_xpath=//div[@id='modalWindow']/div/div/p[2]
+ALBio_xpath=//div[@id='modalWindow']/div/div/p[3]
+
+SPLCandidate_xpath=//li[contains(text(),'Rajender Brar')]
+SPLImage_xpath=//div[@id='modalWindow']/div/figure/img
+SPLName_xpath=//div[@id='modalWindow']/div/div/ul/li
+SPLTitle_xpath=//div[@id='modalWindow']/div/div/ul/li[3]
+SPLBio_xpath=//div[@id='modalWindow']/div/div/ul/li[4]
+SPLEmail_xpath=//div[@id='modalWindow']/div/div/ul/li[5]
+
+#####Promo Teaser carousel #######
+Promocarousel_xpath=//div[@class='promocarousel section']
+NextButton_xpath=//button[@class='slick-next']
+PrevButton_xpath=//button[@class='slick-prev']
+PromoUrl_xpath=//div[@class='slick-slide slick-active']/article/div/a/img
+ReadMore_xpath=//div[@class='slick-slide slick-active']/article/div/div/div/a
+TeaserCarousel_xpath=//div[@class='teasercarousel']
+LatestNewsDiv_xpath=//div[@class='latestnews']
+LatestNewsHeader_xpath=//div[@class='latestnews']/div/div/div/p
+LatestNewsLinks_xpath=//div[@class='latestnews']/div/div/div/ul/li/a
+
+####Blog Listing and Item########
+ReadBlog_xpath=//p[@class='label']
+BlogPages_xpath=//section[@class='blog-listing infinite-scroll-item']
+BlogItem1_xpath=//h3/a
+PostedByLink_xpath=//div[@class='tags']/p/a
+Clear_xpath=//div[@class='blog-results']/a
+MoreReadBlog_xpath=//section[@class='blog-listing infinite-scroll-item']/div/div/a
+BlogItemPrev_xpath=//p[@class='label' and contains(text(),'Previous')]
+PostedTag_xpath=//div[@class='common-content blog']/div[3]/p/a
+
+##########Text and Image#######
+Text&ImagePage_xpath=//a[contains(text(),'Compensation Loss Profile')]
+Text&ImageLink_xpath=//article//img[contains(@src,'family-wth-new-baby')]
+Text&ImageHeader1_xpath=//article//h4
+Text&ImageHeader2_xpath=//article//h4[2]
+Text&ImageHeader3_xpath=//article//h4[3]
+Text&ImageHeader4_xpath=//article//h4[4]
+
+###Contact Us####
+CFirstName_id=firstName
+FirstNameError_id=firstName-error
+CLastName_id=lastName
+ContactUsEmail_id=emailAddress
+ClientRadioButton_xpath=//input[@type='radio' and @value='client']
+VendorRadioButton_xpath=//input[@type='radio' and @value='vendor']
+OtherRadioButton_xpath=//input[@type='radio' and @value='other']
+CCompanyName_id=companyName
+PostalCode_id=postalCode
+Country_xpath=//select[@name='Country']/option
+HelpDescription_id=helpDescription
+ContactUsSubmit_xpath=//input[@id='contactButton']
+ContactUsCapcha_xpath=//div[@class='recaptcha-checkbox-checkmark']
+
+TermAndConditionsPopUpCancel_css=#modalWindow > #dynPolicyModal > div.c-modal-message__inner > div.c-modal-message__body > div.c-modal-message__body-ui > button.c-modal-message__body-ui-cancel
+ExternalLinkPopUpCancel_css=#modalWindow > #dynDialogModal > div.c-modal-message__inner > div.c-modal-message__body > div.c-modal-message__body-ui > button.c-modal-message__body-ui-cancel
+
+###Global Dropdowns######
+CountrySelectionText_xpath=//div[@class='region-selector-wrap']/p
+AmericasSitesText_xpath=//div[@class='row']//div[@class='large-3 columns']/a
+AsiaPacificText_xpath=//div[@class='row']//div[@class='large-3 columns'][2]/a
+EuropeText_xpath=//div[@class='row']//div[@class='large-3 columns'][3]/a
+MiddleEastText_xpath=//div[@class='row']//div[@class='large-3 columns'][4]/a
+AmericasSitesExpended_xpath=//div[@class='row']//div[@class='large-3 columns']/a[@class='active']
+AsiaPacificExtended_xpath=//div[@class='row']//div[@class='large-3 columns'][2]/a[@class='active']
+CanadaSite_xpath=//div[@data-region='Americas']//ul/li/a[contains(text(),'Canada')]
+ActiveCountry_xpath=//a[@id='activeCountry']/span
+
+##Right Rail##
+MarshConnectExpand_xpath=//div[@class=' container info-accordion']/div/div[3]/div/div/div
+MarshConnectLearnMore_xpath=//div[@class='columns acc-inner-content']/ul/li/a[2]
+RRPdfLinks_xpath=//div[@class='rightrailpdfdownload section']/div/div/div/ul/li
+
+RightRailVideo_xpath=//div[@class='rightrailvideo section']/div/div/a/img
+RightRailVideoText_xpath=//div[@class='rt-rail-highlight video-player']/div/div/h2/a
+RightRailVideoPlay_xpath=//div[@class='vp-controls']/button
+Closevideo_xpath=//span[@class='status-icon']
+
+ThomasQuigley_xpath=//a[contains(text(),'Thomas Quigley')]
+RRBio&ImagePage_xpath=//a[contains(text(),'Three Key Risks Communications, Media, and Technology Companies Must Manage in 2015')]
+AuthorImage_xpath=//div[@class='rightrailbio section']/div/div/img
+MeetTheAuthor_xpath=//div[@class='text-area']/p
+AuthorName_xpath=//div[@class='text-area']/p[2]
+AuthorDiscription_xpath=//div[@class='text-area']/p[3]
+
+RightRailImageDiv_xpath=//div[@class='rightrailimage section']/div/div/div/a/img
+
+Hospitality&Gaming_xpath=//a[contains(text(),'Hospitality & Gaming')]
+RRHorizontalHighlight_xpath=//div[@class='rightrailhorizontalhighlight section']/div/div
+RRHorizontalHighlightText_xpath=//div[@class='rightrailhorizontalhighlight section']/div/div/div/div/p
+RRHorizontalHighlightEmail_xpath=//div[@class='rightrailhorizontalhighlight section']/div/div/div/div/a
+
+RRVerticalHighlight_xpath=//div[@class='rightrailverticalhighlight section']/div/div
+RRVerticalHighlightBioGraphy_xpath=//div[@class='rightrailverticalhighlight section']/div/div/div/a
+
+RRContactUs_xpath=//div[@class='rightrailcontactus section']/div/a
+ContactUsText_xpath=//div[@class='contactusform']/p
+RRText1_xpath=//div[@class='rt-rail-text']/div/div/p
+RRText2_xpath=//div[@class='rt-rail-text']/div/div/p[2]
+RRText2Link_xpath=//div[@class='rt-rail-text']/div/div/p[2]/a
+Rail_xpath=//a[contains(text(),'Rail')]
+
+WhatWeDo_xpath=//a[contains(text(),'What We Do')]
+RRSocialLinksDiv_xpath=//div[@class='social-media']/div/div/a
+RRSocialTwitter_xpath=//div[@class='social-media']/div/div/a/img
+RRSocialLinkedin_xpath=//div[@class='social-media']/div/div/a[2]/img
+RRSocialFacebook_xpath=//div[@class='social-media']/div/div/a[3]/img
+RRSocialYoutube_xpath=//div[@class='social-media']/div/div/a[4]/img
+
+Research&Briefing_xpath=//a[contains(text(),'Research & Briefings')]
+RRTagbordPage_xpath=//a[contains(text(),'The Global Risks Report 2017')]
+RRTagbordHighlight_xpath=//div[@class='post-content']/div[2]/img
+RRCloseHighlight_xpath=//button[@class='close']/span
+RRTagbordMore_xpath=//a[@id='load-more']
+
+RRPeopleListText_xpath=//div[@class='rightrailpeoplelist section']/div/div/div/p
+RRPeopleListImg_xpath=//div[@class='rightrailpeoplelist section']/div/div/div/div/img
+RRPeopleListLink_xpath=//div[@class='rightrailpeoplelist section']/div/div/div/div/ul/li/a
+RRPeopleListLink2_xpath=//div[@class='rightrailpeoplelist section']/div/div/div/div[2]/ul/li/a
+
+RRReadTeaserText_xpath=//div[@class='rightrailmostreadteaser section']/div/div/div/p
+RRReadTeaserLink_xpath=//div[@class='rightrailmostreadteaser section']/div/div/div/ul/li/h2/a
+RRReadTeaserReadMore_xpath=//div[@class='rightrailmostreadteaser section']/div/div/div/ul/li/a
+RRReadTeaserPostedText_xpath=//div[@class='rightrailmostreadteaser section']/div/div/div/ul/li/div/p[2]
+
+RRPeopleBlogCarousel_xpath=//div[@class='rightrailpeopleblogcarousel']
+RRPrevious_xpath=//span[@class='slide-prev']
+RRNext_xpath=//span[@class='slide-next']
+RRPeopleBlogCarouselImage_xpath=//div[@class='rightrailpeopleblogcarousel']/div/div/div[2]/div/div[2]/a
+RRPeopleBlogCarouselHeader_xpath=//div[@class='rightrailpeopleblogcarousel']/div/div/div[2]/div/div[2]/div/div/h3/a
+RRPeopleBlogCarouselReadMore_xpath=//div[@class='rightrailpeopleblogcarousel']/div/div/div[2]/div/div[2]/div/div/a
+
+CookieConsentDiv_xpath=//div[@class='cookie-consent']
+CookieConsentText_xpath=//div[@class='cookie-consent']/div/p
+CookieConsentOK_xpath=//a[@class='btn']
+
+BreadcrumbText_xpath=//div[@id='home']
+BreadcrumbHome_xpath=//div[@id='home']/li/a
+BreadcrumbLeadLink1_xpath=//div[@id='Global Leadership0']/ul/li/a
+BreadcrumbLink2_xpath=//div[@id='home']/li[3]/a
+
+
+CampusRecruiting_xpath=//div[@class='row']/div/a
+CampusRecruitingViewMore_xpath=//dt[@class='current-filter has-sub']/a
+CampusRecruitingViewLinks_xpath=//dd[@class='sub-menu open']/ul/li/div/a
+Text_xpath=//article[@class='large-8 large-uncentered medium-12 small-12 small columns']/div/h1
+AllAccordians_xpath=//div[@class=' container info-accordion']/div/div
+Accordian1_xpath=//div[@class=' container info-accordion']/div/div/div/div
+Accordian2_xpath=//div[@class=' container info-accordion']/div/div[2]/div/div
+Accordian3_xpath=//div[@class=' container info-accordion']/div/div[3]/div/div
+AccordianLearnMore_xpath=//div[@class='columns acc-inner-content']/p[2]/a
+AccordianLearnMore2_xpath=//div[@class=' container info-accordion']/div/div[2]/div/div/div/div/div/p[2]/a
+AccordianLearnMore3_xpath=//div[@class=' container info-accordion']/div/div[3]/div/div/div/div/div/div/p[2]/a
+AllAccordian3_xpath=//div[@class=' container info-accordion']/div/div[3]/div/div
+
+
+Text_xpath=//article[@class='large-8 large-uncentered medium-12 small-12 small columns']/div/h1
+
+GlobalFeatureAreaText_xpath=//div[@class='large-12 medium-12 medium-centered columns']/h4
+
+MiniHeaderLogo_xpath=//div[@class='logo-container small-6 medium-3 large-5 columns']/a
+
+Video_xpath=//div[@class='video section']
+VideoClose_xpath=//iframe[@id='vim-180914438']
+
+
+ColumnControlDiv_xpath=//div[@class='columncontrol section']
+
+CasultyUrl=https://stage.www.marsh.com/us/services/casualty-insurance.html
+KeyTakeaways_xpath=//div[@class='text-area link-style']/a[2]
+PubQuote_xpath=//blockquote[@class='quote']
+
+
+iFrameurl=https://stage.www.marsh.com/us/campaigns/cyber-risk-infographic.html
+iFramePub_xpath=//div[@class='iframe section']
+
+
+BasicFeatureAreaUrl=https://qa.www.marsh.com/us/marsh-pov-listing/the-significant-role-of-m-a-in-real-estate.html
+BFAText_xpath=//div[@class='large-12 columns']/h1
+
+
+PVDUrl=https://qa.www.marsh.com/us/marsh-pvd.html
+BH_xpath=//div[@class='logo-container']
+
+CopyrightText_xpath=//div[@class='large-12 medium-5 columns']
+
+PubBioDetail_xpath=//a[@href='/us/careers/campusrecruiting/our-people/mark.html']
+PubBioDetailIntroText_xpath=//div[@class='campus-content']/h2
+PubBioDetailImage_xpath=//div[@class='campus-content']/figure/img
+PubBioDetailFirstName_xpath=//div[@class='text-area']/h4/a
+PubBioDetailRecUniv_xpath=//div[@class='text-area']/p
+PubBioDetailTitle_xpath=//div[@class='text-area']/p[2]
+PubBioDetailDesc_xpath=//div[@class='campus-content']/p
+
+RightRailTextImageurl=https://stage.www.marsh.com/us/rr.html
+RRTIDiv_xpath=//div[@class='rightrailtextimage']
+RRTIHeader_xpath=//div[@class='cnt-area']/p
+RRTIDescription_xpath=//div[@class='cnt-area']/ul/li[2]/div[@class='text']/p
+RRTIImage_xpath=//div[@class='icon']/a/img
+
+POVArticleListingurl=https://stage.www.marsh.com/us/marsh-pov-listing.html
+POVHeader_xpath=//div[@class='medium-7 columns']/h3
+POVRSS_xpath=//img[@src='/etc/designs/marsh/clientlibs_css/css/common/images/rssimg.png']
+POVTitle_xpath=//div[@id='collapsible0']/div[8]/span[@class='text']
+
+BackgroundFeatureAreaurl=https://qa.www.marsh.com/us/campaigns/cyber-campaign.html
+BackgroundFeaureAreaHeader_xpath=//div[@class='large-8 large-uncentered medium-10 medium-centered columns']/h1
+BackgroundFeaureAreaSubHeader_xpath=//div[@class='large-8 large-uncentered medium-10 medium-centered columns']/h2
+BackgroundFeaureAreaDescription_xpath=//div[@class='large-12 columns']/p
+
+LevelThreeFeatureAreaurl=https://stage.www.marsh.com/us/level3.html
+LevelThreeFeatureAreaDiv_xpath=//div[@class='levelthreefeaturearea section']
+LTFAHeader_xpath=//div[@class='large-8 medium-8 columns']/h1
+
+LevelFourFeatureAreaDiv_xpath=//section[@class='feature-area lvl-04']
+LFFAHeader_xpath=//div[@class='large-8 medium-8 columns']/h1
+
+R&B_xpath=//ul/li/ul/li/div/div/div/ul/li[1]/a
+LevelOneDiv_xpath=//section[@class='feature-area lvl-01']
+LevelOneHader_xpath=//div[@class='large-12 columns']/div/div/h1
+LevelOneDscription_xpath=//div[@class='large-8 medium-8 small-12 columns']/p
+LevelOneLftButton_xpath=//a[@href='/us/careers/marsh-careers-database.html']
+LevelOneRghtButton_xpath=//a[@href='/us/careers/campusrecruiting/summer-trac.html']
+LevelOneRText_xpath=//div[@class='large-4 medium-4 hide-for-small-only columns']/div/p
+
+FeatureAreaurl_xpath=//div[@class='medium-7 columns']/ul/li[3]
+FeatureAreaPubHeaderDiv_xpath=//div[@class='large-12 columns']/div/div/h1
+FeatureAreaDscriptionPub_xpath=//div[@class='large-8 medium-8 small-12 columns']/div/p
+FeatureAreaButtonlftPub_xpath=//div[@class='large-8 medium-8 small-12 columns']/a
+FeatureAreaRghtButtonPub_xpath=//div[@class='large-8 medium-8 small-12 columns']/a[2]
+FeatureAreaRText_xpath=//div[@class='large-4 medium-4 hide-for-small-only columns']/div/div/p
+
+BannerCalloutPub_xpath=//div[@data-interchange='[/content/dam/marsh/Imagery/Main-Left-Body/Banner-Callout/podcast-callout-banner-mobile-v2.jpg, (small)], [/content/dam/marsh/Imagery/Main-Left-Body/Banner-Callout/podcast-callout-banner-tablet-v2.jpg, (medium)], [/content/dam/marsh/Imagery/Main-Left-Body/Banner-Callout/podcast-callout-banner-desktop-v2.jpg, (large)]']
+BannerCalloutPubHeader_xpath=//div[@data-interchange='[/content/dam/marsh/Imagery/Main-Left-Body/Banner-Callout/podcast-callout-banner-mobile-v2.jpg, (small)], [/content/dam/marsh/Imagery/Main-Left-Body/Banner-Callout/podcast-callout-banner-tablet-v2.jpg, (medium)], [/content/dam/marsh/Imagery/Main-Left-Body/Banner-Callout/podcast-callout-banner-desktop-v2.jpg, (large)]']/div/p
+BannerCalloutPubDescription_xpath=//div[@data-interchange='[/content/dam/marsh/Imagery/Main-Left-Body/Banner-Callout/podcast-callout-banner-mobile-v2.jpg, (small)], [/content/dam/marsh/Imagery/Main-Left-Body/Banner-Callout/podcast-callout-banner-tablet-v2.jpg, (medium)], [/content/dam/marsh/Imagery/Main-Left-Body/Banner-Callout/podcast-callout-banner-desktop-v2.jpg, (large)]']/div/blockquote
+BannerCalloutPubButtonLabel_xpath=//div[@data-interchange='[/content/dam/marsh/Imagery/Main-Left-Body/Banner-Callout/podcast-callout-banner-mobile-v2.jpg, (small)], [/content/dam/marsh/Imagery/Main-Left-Body/Banner-Callout/podcast-callout-banner-tablet-v2.jpg, (medium)], [/content/dam/marsh/Imagery/Main-Left-Body/Banner-Callout/podcast-callout-banner-desktop-v2.jpg, (large)]']/div/div/p
+
+NavigationFeatureAreaHeadingPub_xpath=//div[@class='columns']/h1
+NavigationFeatureAreaNavBarPub_xpath=//ul[@class='list-nav eventfeature-list-nav']
+NavigationFeatureAreaHighlighted_xpath=//ul[@class='list-nav eventfeature-list-nav']/li[27]
+NavigationFeatureAreaRedirection_xpath=//ul[@class='list-nav eventfeature-list-nav']/li[13]
+
+HeaderFeaUrl=http://stage.www.marsh.com/us/export-contactus.html
+HeaderFeatureAreaHeadingPub_xpath=//div[@class='large-12 large-uncentered medium-11 medium-centered small-11 small-centered columns']/h1
+HeaderFeatureAreaSubHeadingPub_xpath=//div[@class='large-12 large-uncentered medium-11 medium-centered small-11 small-centered columns']/h3
+
+RRPCNonPreKeyword_xpath=//input[@name='keyword']
+RRPCNonPreSearch_xpath=//input[@class='search-icon']
+RRPCPageNonPrem_xpath=//a[@href='/us/insights/research/is-this-the-end-of-globalization.html']
+RRPCBack_xpath=//div[@id='home']/li[3]/a
+RRPCRegions_xpath=//dl[@id='filter3']
+RRPCAsia_xpath=//dl[@id='filter3']/dd/ul/li
+RRPCPremium_xpath=//a[@href='/us/insights/research/asia-insurance-market-report-2016.html']
+RRPCBox1_xpath=//div[@class='box']
+RRPCPremiumHeader_xpath=//div[@class='text-area']/h2
+RRPCPremiumDescription_xpath=//div[@class='text-area']/p
+RRPCPremiumRegister_xpath=//div[@class='text-area']/a
+RRPCPremiumLogin_xpath=//div[@class='text-area']/button
+RRPCPDFTitle_xpath=//a[@class='filename']
+RRPCDownloadPDF_xpath=//a[@class='orange-btn download-pdf']

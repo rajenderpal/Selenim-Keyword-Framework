@@ -1,0 +1,782 @@
+package Marsh_util;
+/**
+* The App keyword class extends Generic keyword file and contanis application
+* specific action keywords.
+*
+* @author  Rajender Pal
+*/
+
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.datatransfer.StringSelection;
+import java.awt.event.KeyEvent;
+import java.io.FileInputStream;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import java.util.Properties;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import com.relevantcodes.extentreports.ExtentTest;
+import com.relevantcodes.extentreports.LogStatus;
+
+public class App_Keywords extends Generic_Keywords{
+//	Properties prop;
+	int num = 0;
+	WebElement FolderAsset = null;
+// 	Initialize property file object in the constructor of this class
+	
+	
+    public App_Keywords(ExtentTest t){
+		ExtTest = t;
+		prop = new Properties();
+		String path = System.getProperty("user.dir")+"//src//test//repository//"+ "project.properties";
+		FileInputStream fis;
+		try {
+			fis = new FileInputStream(path);
+			prop.load(fis);
+			ExtTest.log(LogStatus.INFO, "Read data from property file.");
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+	}
+	
+	public void closeCOOKIEPopupIfPresent(String locatorkey) {
+		//method created to close cookie pop in AEM and publish env
+		ExtTest.log(LogStatus.INFO, "Waiting for the COOKIE SETTINGS popup...");
+		waitTillPageLoaded();
+		capturescreenshot();
+			if(isElementPresent(locatorkey)) {
+				getElement(locatorkey).click();
+	  		    ExtTest.log(LogStatus.INFO, "Closed the COOKIE SETTINGS popup.");
+			    driver.switchTo().defaultContent();
+		    }else {
+				try {
+					driver.findElement(By.id("cq-cf-frame"));	
+					driver.switchTo().frame("cq-cf-frame");
+					WebElement ele = driver.findElement(By.xpath("//form[@id='optInModal']/div[2]/div[2]/div/input")); 
+					JavascriptExecutor jse = (JavascriptExecutor) driver;
+					jse.executeScript("arguments[0].scrollIntoView();", ele);
+					ele.click();
+					ExtTest.log(LogStatus.INFO, "Closed the COOKIE SETTINGS popup.");
+					driver.switchTo().defaultContent();	   
+			    	}	
+				catch (NoSuchElementException e) {
+					ExtTest.log(LogStatus.INFO, "COOKIE SETTINGS popup did not display.");
+					driver.switchTo().defaultContent();
+					}
+			}
+		}
+	
+	public void doubleclickelement(String locatorkey) {
+		//driver will double click on given element
+		waitTillPageLoaded();
+	 	if (isElementPresent(locatorkey)) {
+	 		scrollToElement(locatorkey);
+	 		try {
+	 			WebDriverWait wait = new WebDriverWait(driver, 30);
+	 			wait.until(ExpectedConditions.elementToBeClickable(getElement(locatorkey)));
+	 			Actions builder = new Actions(driver);
+	 			builder.moveToElement(getElement(locatorkey)).doubleClick().build().perform();
+	 			ExtTest.log(LogStatus.INFO, "Double clicked on element:- " + locatorkey);
+	 		} catch (Exception e) {
+	 			reportFailure("This is catch block for Double click method.");
+	 		  		}
+	 		} 		
+	  else {	
+	 		reportFailure("Required element:- " + locatorkey + " is not visible.");
+	 	    }
+	 	}
+	
+	public void openAEMBox(String locatorkey) throws InterruptedException {
+		//driver will open the AEM edit box with full screen
+		waitTillPageLoaded();
+	 	if (isElementPresent(locatorkey)) {
+	 		WebDriverWait wait = new WebDriverWait(driver, 30);
+	 			getElement("TouchUIEditMode_xpath").click();
+	 			waitTillPageLoaded();
+	 			scrollToElement(locatorkey);
+	 			getElement(locatorkey).click();
+	 		try {
+	 			driver.findElement(By.xpath(prop.getProperty("TouchUIParent_xpath"))).click();
+	 			wait.until(ExpectedConditions.visibilityOf(getElement("TouchUIConfigure_xpath")));
+	 			scrollToElement("TouchUIConfigure_xpath");
+	 			getElement("TouchUIConfigure_xpath").click();
+	 			
+	 			Thread.sleep(1500);
+	 			getElement("TouchUIToggleFullscreen_xpath").click();
+	 			ExtTest.log(LogStatus.INFO, "Opened AEM edit box :- " + locatorkey);
+	 		} catch (NoSuchElementException e ) {
+	 			
+	 			scrollToElement("TouchUIConfigure_xpath");
+	 			getElement("TouchUIConfigure_xpath").click();
+	 			
+	 			Thread.sleep(1500);
+	 			getElement("TouchUIToggleFullscreen_xpath").click();
+	 			ExtTest.log(LogStatus.INFO, "Opened AEM edit box :- " + locatorkey);
+	 			capturescreenshot();
+	 		  		}
+	 		} 		
+	  else {	
+	 		reportFailure("Required element:- " + locatorkey + " is not visible.");
+	 	    }
+	}
+	
+	public void verifyBrowseValue(String locatorkey, String datakey) {
+		//driver will verify the Path browse selected value
+		waitTillPageLoaded();
+	 	if (isElementPresent(locatorkey)) {
+	 		scrollToElement(locatorkey);
+	 		try {
+	 			getElement(locatorkey).click();
+	 			waitTillPageLoaded();
+	 			Thread.sleep(5000);
+	 			scrollToElement("PathBrowserselectedValue_xpath");
+	 			String s1 = getElement("PathBrowserselectedValue_xpath").getText();
+				if (s1.equalsIgnoreCase(datakey)) {
+				         ExtTest.log(LogStatus.PASS, "Selected value is correct. Actual -> "+ s1 + " and Expected is -> "+ datakey );
+				         capturescreenshot();
+				         getElement("PathBrowserClose_xpath").click();
+				}else{
+					reportFailure("Selected value is not correct. Actual -> "+ s1 +" but Expected is -> " + datakey );
+				}
+	 		} catch (Exception e) {
+	 			reportFailure("This is catch block for AEM edit box");
+	 		  		}
+	 		} 		
+	  else {	
+	 		reportFailure("Required element:- " + locatorkey + " is not visible.");
+	 	    }
+	}
+		
+	public void verifyRegisterForm(String locatorkey) {
+		ExtTest.log(LogStatus.INFO, "Initiating Register form validation..");
+		waitTillPageLoaded();
+		if (isElementPresent(locatorkey)) {
+ 			scrollToElement(locatorkey);
+ 			ExtTest.log(LogStatus.INFO, "Register form validation started with Invalid data.");
+					getElement("FirstName_id").sendKeys("ABCabc123!@#$%^&");
+					getElement("LastName_id").sendKeys("ABCabc123!@#$%$%^&*"); 
+					getElement("JobTitle_id").click();
+					getElement("Telephone_id").sendKeys("9876543987654387654376543"); 
+					getElement("Email_Address_id").sendKeys("testuser12345!@#$%^&*()@gmail.com");
+					getElement("Confirm_Email_id").sendKeys("testuser@gmail.com");
+					getElement("ToolTip_xpath").click();
+					getElement("EnterPassword_id").sendKeys("ABCABCabv4323232");
+					getElement("ConfirmPassword_id").sendKeys("ABC45678i9o0p");
+					getElement("CompanyName_id").sendKeys("Accenture");
+					getElement("Industry_id").click();
+					getElement("CountrySelection_id").click();
+					getElement("Region_id").sendKeys(Keys.TAB);
+					getElement("Relationship_id").click();
+					getElement("TermAndCondition_xpath").click();
+					capturescreenshot();
+								
+					ExtTest.log(LogStatus.INFO, "Register form validation started with valid data.");
+					driver.navigate().refresh();
+					getElement("TermAndConditionsPopUp_css").click();
+					getElement("FirstName_id").sendKeys("Rajender");
+					getElement("LastName_id").sendKeys("Pal"); 
+					getElement("JobTitle_id").sendKeys("Analyst");
+					getElement("Telephone_id").sendKeys("+19876543219"); 
+					getElement("Email_Address_id").sendKeys("testuser1234@gmail.com");
+					getElement("Confirm_Email_id").sendKeys("testuser1234@gmail.com");
+					getElement("ToolTip_xpath").click();
+					getElement("EnterPassword_id").sendKeys("India@2018");
+					getElement("ConfirmPassword_id").sendKeys("India@2018");
+					getElement("CompanyName_id").sendKeys("Accenture");
+					getElement("Industry_id").sendKeys("Agriculture");
+					getElement("CountrySelection_id").sendKeys("USA");
+					getElement("Region_id").sendKeys("Hawaii");
+					getElement("Relationship_id").sendKeys("Vendor");
+					getElement("TermAndCondition_xpath").click();
+					capturescreenshot();
+					ExtTest.log(LogStatus.PASS, "Register form validation completed with Invalid and Valid data.");
+					System.out.println("Register form validation completed with Invalid and Valid data.");
+				}
+		else {	reportFailure("Not able to validate Register Form.");
+		}
+	}
+	
+	public void verifyLinksPresent(String locatorkey) throws InterruptedException {
+		//driver will verify links present inside given box and print their name
+		waitTillPageLoaded();
+		scrollToElement(locatorkey);
+		WebDriverWait wait = new WebDriverWait(driver, 60);
+		wait.until(ExpectedConditions.visibilityOf(getElement(locatorkey)));
+		List<WebElement> list = driver.findElements(By.xpath(prop.getProperty(locatorkey)));
+		int num = list.size();
+		System.out.println("Number of links present :- " + num);
+		ExtTest.log(LogStatus.INFO, "Number of links present :- " + num);
+		if (num!= 0){
+				for (int j =0; j<num; j++) {
+					WebElement ele = list.get(j);
+					String value = ele.getText(); 
+					JavascriptExecutor jse = (JavascriptExecutor) driver;
+					jse.executeScript("arguments[0].scrollIntoView();", ele);
+					ExtTest.log(LogStatus.INFO, "Value of link " + j + " is: " + value);
+					ele.click();
+					Thread.sleep(3000);
+					capturescreenshot();
+				}		}
+	   else {
+			reportFailure("No Links present for given location.");
+		}
+	}
+	
+	public void verifyLinksClickable(String locatorkey) {
+		//driver will verify links present and click on all links
+		waitTillPageLoaded();
+		WebDriverWait wait = new WebDriverWait(driver, 60);
+		wait.until(ExpectedConditions.visibilityOf(getElement(locatorkey)));
+		List<WebElement> list = driver.findElements(By.xpath(prop.getProperty(locatorkey)));
+		int num = list.size();
+		System.out.println("Number of links present :- " + num);
+		ExtTest.log(LogStatus.INFO, "Number of links present :- " + num);
+		if (num!= 0){
+			for (int j =0; j<num;) {
+				WebElement ele = list.get(j);
+				String value = ele.getText();
+   				ExtTest.log(LogStatus.INFO, "Clicked on link :- " + value);
+   				ele.click();
+   				((JavascriptExecutor)driver).executeScript("scroll(0,350)");
+   				capturescreenshot();
+   				driver.navigate().back();
+   				break;
+				}  }		 
+		 else {
+			 reportFailure("No Link present for given location.");
+		}
+	}
+	
+	public void verifyContentPages(String locatorkey, String datakey) throws InterruptedException {
+		waitTillPageLoaded();
+		scrollToElement(locatorkey);
+		WebDriverWait wait = new WebDriverWait(driver, 30);
+		wait.until(ExpectedConditions.visibilityOf(getElement(locatorkey)));
+		List<WebElement> list = driver.findElements(By.xpath(prop.getProperty(locatorkey)));
+		List<WebElement> list1 = driver.findElements(By.xpath("//li[@class='doc-date']"));
+		int num = list.size();
+		System.out.println("Number of pages under content listing is:- " + num);
+		ExtTest.log(LogStatus.INFO, "Number of pages under content listing is:- " + num);
+		if (num!= 0){
+			for (int j =0; j<num; j++) {
+				WebElement ele = list.get(j);
+				String value = ele.getText();
+				WebElement ele1 = list1.get(j);
+				String date = ele1.getText();
+   				ExtTest.log(LogStatus.INFO, "Name of page " + j + " is:- "+ value  + 
+   						" and date of publish is :-"+ date);
+   				Thread.sleep(500);
+   				capturescreenshot();
+				}
+			if(num==Double.parseDouble(datakey)) {
+				for(int j =0; j<2; j++) {
+			ExtTest.log(LogStatus.INFO, "Scrolled page for more content pages.");
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+			 js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+			 waitTillPageLoaded();
+			 List<WebElement> list3 = driver.findElements(By.xpath(prop.getProperty(locatorkey)));
+			 int num2 = list3.size();
+			 System.out.println("After scrolling down no. of pages for content listing is:- " + num2);
+			 ExtTest.log(LogStatus.INFO, "After scrolling down no. of pages for content listing is:-"+ num2);
+			 capturescreenshot();
+				}
+			} else {
+				ExtTest.log(LogStatus.INFO, "Did not scroll the page, content has less than "+ Double.parseDouble(datakey) +" pages.");
+				capturescreenshot();
+			}		
+	} else {
+			ExtTest.log(LogStatus.INFO, "Pages are not present for content listing.");
+			capturescreenshot();
+		}
+	}
+	
+	public void selectFromDrop(String locatorkey, String datakey) throws InterruptedException {
+		//driver will select given value from drop down
+		ExtTest.log(LogStatus.INFO, "Selecting the value :- " + datakey + " from dropdown.");
+		WebElement box = getElement(locatorkey);
+		List<WebElement> list = box.findElements(By.xpath("//dd[@class='sub-menu open']/ul/li"));
+		int num1 = list.size();
+		if(num1==0) {
+			list = box.findElements(By.xpath("//dd[@class='sub-menu open']/ul/a"));
+			num1 = list.size();
+		}
+		if(num1==0) {
+			list = box.findElements(By.xpath("//div[@class='x-combo-list-item']"));
+			num1 = list.size();
+		}
+		if(num1==0) {
+			list = box.findElements(By.xpath("//option"));
+			num1 = list.size();
+		}
+		System.out.println("Number of options in drop down are:- " + num1);	
+		if (num1 != 0){
+			for (int j = 0; j < num1; j++) {
+				WebElement ele = list.get(j);
+				String value = ele.getText().trim();
+				if (value.equalsIgnoreCase(datakey)){
+					Actions actions = new Actions(driver);
+					actions.moveToElement(ele).build().perform();
+					ele.click();
+					ExtTest.log(LogStatus.INFO, "Selected the value :- " + datakey + " from dropdown.");
+					Thread.sleep(2000);
+					capturescreenshot();
+					break;
+			    	}
+			}	} 
+		else { 
+			reportFailure("Value :- " + datakey + ", could not be selected sucessfully.");	
+		}	
+	}
+	
+	public void verifyUrlRedirection(String locatorkey , String datakey) {
+		waitTillPageLoaded();
+		if(isElementPresent(locatorkey)) {
+			scrollToElement(locatorkey);
+			String murl= driver.getCurrentUrl();
+			getElement(locatorkey).click();
+			waitTillPageLoaded();
+			if(isElementPresent("TermAndConditionsPopUp_css")) {
+		    	     getElement("TermAndConditionsPopUp_css").click();
+		   			 String url= driver.getCurrentUrl();
+		   			 if(url.equals(datakey)) {
+		   			 ExtTest.log(LogStatus.PASS,"Link redirected to CORRECT url : " + url +", Expected url :- " + datakey);
+		   			 capturescreenshot();
+		   			 driver.navigate().back();
+		   	         }
+		   			 else {
+		   				reportFailure("Link redirected to this url : " + url +", Expected url :- " + datakey);
+		   			   }
+			         }
+		     else {
+	   				String url= driver.getCurrentUrl();
+	   			    if(url.equals(datakey)) {
+	   				    ExtTest.log(LogStatus.PASS,"Link redirected to CORRECT url : " + url +", Expected url :- " + datakey);
+	   				    capturescreenshot();
+	   				    if(!murl.contains("marsh.com/us/home.html")) {driver.navigate().back();}
+	   		     	   }
+	   			    else {
+	   				reportFailure("Link redirected to this url : " + url +", Expected url :- " + datakey);
+	   		             }
+		     }  	}			 
+		else { 	
+			reportFailure("Element is not present :" + locatorkey);
+	       }
+		}
+	
+	public void verifyNewTabUrlRedirection(String locatorkey , String datakey) {
+		waitTillPageLoaded();
+		if(isElementPresent(locatorkey)) {
+			scrollToElement(locatorkey);
+			getElement(locatorkey).click();
+			
+			 if(isElementPresent("ExternalLinkPopUp_css")) {
+		    	 getElement("ExternalLinkPopUp_css").click();
+		    	 waitTillPageLoaded();
+		    	 List<String> windowHandles = new ArrayList<String>(driver.getWindowHandles());
+				 driver.switchTo().window(windowHandles.get(1));
+		   			    String url= driver.getCurrentUrl();
+		   			    if(url.equalsIgnoreCase(datakey)) {	
+		   				ExtTest.log(LogStatus.PASS,"Link redirected to CORRECT url : " + url +", Expected url :- " + datakey);
+		   				
+		   				capturescreenshot();
+		   			    driver.switchTo().window(windowHandles.get(1)).close();
+		   			    driver.switchTo().window(windowHandles.get(0));
+		   			    }
+		   			    else {reportFailure("Link redirected to this url : " + url +", Expected url :- " + datakey);
+		   			   }
+			      }
+		     else {
+					List<String> windowHandles = new ArrayList<String>(driver.getWindowHandles());
+					driver.switchTo().window(windowHandles.get(1));
+	   				String url= driver.getCurrentUrl();	   				
+	   			    if(url.equalsIgnoreCase(datakey)) {
+	   				    ExtTest.log(LogStatus.PASS,"Link redirected to CORRECT url : " + url +", Expected url :- " + datakey);
+	   				    capturescreenshot();
+	   				    driver.switchTo().window(windowHandles.get(1)).close();
+		   			    driver.switchTo().window(windowHandles.get(0));
+	   			    }
+	   			     else {  reportFailure("Link redirected to this url : " + url +", Expected url :- " + datakey);
+	   		                  }
+		     }  	}			 
+		else {	
+			reportFailure("Element is not present :" + locatorkey);
+	       }
+		}	
+
+	public void verifyDateFormat(String locatorkey, String datakey) throws InterruptedException {
+		WebDriverWait wait = new WebDriverWait(driver, 20);
+		wait.until(ExpectedConditions.visibilityOf(getElement(locatorkey)));
+		if(isElementPresent(locatorkey)) {
+		     WebElement ele = getElement(locatorkey);
+		     String dateformat1 = ele.getAttribute("data-value").trim();
+		     capturescreenshot();
+		     ExtTest.log(LogStatus.INFO, "Selected date format in AEM is :- "+ dateformat1);
+		     SimpleDateFormat sdf = new SimpleDateFormat(dateformat1);
+		     
+			try {
+				Robot r1 = new Robot();
+				r1.keyPress(KeyEvent.VK_CONTROL); 
+				r1.keyPress(KeyEvent.VK_T); 
+				r1.keyRelease(KeyEvent.VK_CONTROL); 
+				r1.keyRelease(KeyEvent.VK_T);
+				Thread.sleep(4000);
+				List<String> windowHandles = new ArrayList<String>(driver.getWindowHandles());
+				driver.switchTo().window(windowHandles.get(2));
+			                     } catch (AWTException e) {reportFailure("This is catch Block for new tab in date format.");}
+				                         
+		     if(datakey.equalsIgnoreCase("Event Feature") ){
+            	 driver.get("https://stage.www.marsh.com/us/events/risk-management-201--financial-and-professional-liability-claims.html");
+            	 waitTillPageLoaded();
+            	// getElement("Continue_Without_PopUp_xpath").click();
+            	 scrollToElement("EventFeaturePublishDate_xpath");
+            	 capturescreenshot();
+            	 String value= getElement("EventFeaturePublishDate_xpath").getText();
+            	 String[] value1 = value.split("\\|");
+            	 String value2 = value1[0].trim();
+            	 ExtTest.log(LogStatus.INFO, "Date displayed at Event Feature page :- " + value2);
+            	 try {
+            	 Date date = sdf.parse(value2);
+            	 if (!value2.equalsIgnoreCase(sdf.format(date))) {
+            		 reportFailure("Event feature page AEM date format -> "+ dateformat1 + ", but Publish page format is ->" + value2); 
+            	 } else {
+            	 ExtTest.log(LogStatus.PASS,"Event feature page AEM date format -> "+ dateformat1 + ", and Publish page is ->" + value2);
+            	 List<String> windowHandles = new ArrayList<String>(driver.getWindowHandles());
+            	 driver.switchTo().window(windowHandles.get(2)).close();
+	   			 driver.switchTo().window(windowHandles.get(1));
+	   			 getElement("DropDown1_xpath").click();
+	   			 } }
+            	 catch (ParseException parseException) {
+            		 reportFailure("Event feature catch block. AEM date format -> "+ dateformat1 + ", but Publish page format is ->" + value2); 
+				    }}
+		     else if(datakey.equalsIgnoreCase("Event Detail") ){
+            	 driver.get("https://stage.www.marsh.com/us/events/risk-management-201--financial-and-professional-liability-claims.html");
+            	 waitTillPageLoaded();
+            	 scrollToElement("EventDetailsPublishDate_xpath");
+            	 capturescreenshot();
+            	 String value= getElement("EventDetailsPublishDate_xpath").getText();
+            	 //String[] value1 = value.split("\\|");
+            	 value= value.trim();
+            	 ExtTest.log(LogStatus.INFO, "Date displayed at Event Detail page :- " + value);
+            	 try {
+            	 Date date = sdf.parse(value);
+            	 if (!value.equalsIgnoreCase(sdf.format(date))) {
+            		 reportFailure("Event Detail page AEM date format -> "+ dateformat1 + ", but Publish page format is ->" + value); 
+            	 } else {
+            	 ExtTest.log(LogStatus.PASS,"Event Detail page AEM date format -> "+ dateformat1 + ", and Publish page is ->" + value);
+            	 List<String> windowHandles = new ArrayList<String>(driver.getWindowHandles());
+            	 driver.switchTo().window(windowHandles.get(2)).close();
+	   			 driver.switchTo().window(windowHandles.get(1));
+	   			 getElement("DropDown2_xpath").click();
+            	 } }
+            	 catch (ParseException parseException) {
+            		 reportFailure("Event Detail catch block. AEM date format -> "+ dateformat1 + ", but Publish page format is ->" + value); 
+				    }}
+		     else if(datakey.equalsIgnoreCase("Content Listing") ){
+            	 driver.get("https://stage.www.marsh.com/us/insights/research.html");
+            	 waitTillPageLoaded();
+            	 scrollToElement("ContentListingpublishDate_xpath");
+            	 capturescreenshot();
+            	 String value= getElement("ContentListingpublishDate_xpath").getText().trim();
+            	 ExtTest.log(LogStatus.INFO, "Date displayed at Content Listing page :- " + value);
+            	 try {
+            	 Date date = sdf.parse(value);
+            	 if (!value.equalsIgnoreCase(sdf.format(date))) {
+            		 reportFailure("Content Listing page AEM date format -> "+ dateformat1 + ", but Publish page is ->" + value); 
+            	 } else {
+            	 ExtTest.log(LogStatus.PASS,"Content Listing page AEM date format -> "+ dateformat1 + ", and Publish page is ->" + value);
+            	 List<String> windowHandles = new ArrayList<String>(driver.getWindowHandles());
+            	 driver.switchTo().window(windowHandles.get(2)).close();
+	   			 driver.switchTo().window(windowHandles.get(1));
+	   			 getElement("DropDown3_xpath").click();
+            	 } }
+            	 catch ( ParseException parseException) {
+            		 reportFailure("Content Listing catch block. AEM date format -> "+ dateformat1 + ", but Publish page format is ->" + value); 
+				    }}
+		     else {
+            	 driver.get("https://stage.www.marsh.com/us/media/mmc-names-susan-stone-general-counsel-risk-insurances-services.html ");
+            	 waitTillPageLoaded();
+            	 scrollToElement("PressReleasePublishDate_xpath");
+            	 capturescreenshot();
+            	 String value= getElement("PressReleasePublishDate_xpath").getText();
+            	 String[] value1 = value.split("\\|");
+            	 value1[1]= value1[1].trim();
+            	 ExtTest.log(LogStatus.INFO, "Date displayed at Press Release page :-" + value1[1]);
+            	 try {
+            	 Date date = sdf.parse(value1[1]);
+            	 if (!value1[1].equalsIgnoreCase(sdf.format(date))) {
+            		 reportFailure("Press Release page AEM date format -> "+ dateformat1 + ", but Publish page is ->" + value1[1]); 
+            	 } else {
+            	 ExtTest.log(LogStatus.PASS,"Press Release page AEM date format -> "+ dateformat1 + ", and Publish page is ->" + value1[1]);
+            	 List<String> windowHandles = new ArrayList<String>(driver.getWindowHandles());
+            	 driver.switchTo().window(windowHandles.get(2)).close();
+	   			 driver.switchTo().window(windowHandles.get(1));
+	   			 getElement("DropDown5_xpath").click();
+            	 } }
+            	 catch (ParseException ex) {
+            		 reportFailure("Press Release catch block. AEM date format -> "+ dateformat1 + ", but Publish page is ->" + value1[1]); 
+				    }}
+		}
+		else {	
+			reportFailure("This element is not present :-" + locatorkey);
+			}	
+	}	
+	
+	public void verifySharedPeopleCredentials(String datakey) throws InterruptedException {
+		waitTillPageLoaded();
+		    String FName  = "Rajender Brar";
+		    String SName  = "Rajender";
+		    String RUniv  = "DU";
+		    String Email  = "rajender.brar@accenture.com";
+		    String STitle = "CEO";
+		    String Title  = "Chief Operating Officer";
+		    String SBio   = "Bill Pieroni is Chief Operating Officer (COO) of Marsh LLC. He joined Marsh in September 2011. Mr. Pieroni"
+		    		+ " is responsible for the firm’s global operations, focused on continued deployment of differentiated value to clients and improving and expanding Marsh’s capabilities.";
+				                         
+		     if(datakey.equalsIgnoreCase("C05-People/Blog Carousel") ){
+		    	 driver.get("https://qa.www.marsh.com/us/home.html");
+		    	 waitTillPageLoaded();
+		    	 closeCOOKIEPopupIfPresent("Continue_Without_PopUp_xpath");
+		    	 scrollToElement("PrevLink_xpath");
+		    	 getElement("PrevLink_xpath").click();
+		    	if(!ImageValidation("Image_xpath").equalsIgnoreCase("Landscape")) {reportFailure("Image is not Landscape.");}
+		    	ExtTest.log(LogStatus.INFO,"Image is Landscape as expected on C05-People/Blog Carousel page.");
+		    	
+		    	 capturescreenshot();
+		    	 String FullName = driver.findElement(By.xpath("//div[@class='slide slick-slide slick-active' and @index='5']/div/div/h2")).getText();
+		    	 if(!FullName.equals(FName)) {reportFailure("Full name not displayed at People/Blog Carousel page. - AEM->" +FName+ ", Publish->"+ FullName);} 
+		    	 ExtTest.log(LogStatus.INFO,"Correct full name displayed at People/Blog Carousel page - AEM->" +FName+ ", Publish->"+ FullName);
+		    	 
+		    	 String RecUniv = driver.findElement(By.xpath("//div[@class='slide slick-slide slick-active' and @index='5']/div/div/p[2]")).getText();
+		    	 if(!RecUniv.equals(RUniv)) {reportFailure("Recruiting University is not correct - AEM->" +RUniv+ ", Publish->"+ RecUniv);} 
+		    	 ExtTest.log(LogStatus.INFO,"Recruting University is correct - AEM->" +RUniv+ ", Publish->"+ RecUniv);
+		    	 
+		    	 String NTitle = driver.findElement(By.xpath("//div[@class='slide slick-slide slick-active' and @index='5']/div/div/p[3]")).getText();
+		    	 if(!NTitle.equals(Title)) {reportFailure("Title is not correct -AEM->" +Title+ ", Publish->"+ NTitle);} 
+		    	 ExtTest.log(LogStatus.INFO,"Title is correct - AEM->" +Title+ ", Publish->"+ NTitle); 
+		     }
+		     else if (datakey.equalsIgnoreCase("RR16–Right Rail") ){
+		    	 driver.get("https://qa.www.marsh.com/us/campaigns/globalization.html");
+		    	 waitTillPageLoaded();
+		    	 scrollToElement("RRImage_xpath");
+		    	 if(!ImageValidation("RRImage_xpath").equalsIgnoreCase("Portrait")) {reportFailure("Image is not Portrait.");}
+			    	ExtTest.log(LogStatus.INFO,"Image is Portrait as expected on RR16–Right Rail page.");
+		    	 capturescreenshot();
+		    	 
+		    	 String FullName = getElement("RRFullName_xpath").getText();
+		    	 if(!FullName.equals(FName)) {reportFailure("Full name not displayed at Right Rail page. -AEM->" +FName+ ", Publish->"+ FullName);} 
+		    	 	ExtTest.log(LogStatus.INFO,"Correct full name displayed at Right Rail page - AEM->" +FName+ ", Publish->"+ FullName);
+		    	 
+		    	 String RecUniv = getElement("RRRUni_xpath").getText();
+		    	 if(!RecUniv.equals(RUniv)) {reportFailure("Recruiting University is not correct. -AEM->" +RUniv+ ", Publish->"+ RecUniv);} 
+		    	 	ExtTest.log(LogStatus.INFO,"Recruting University is correct - AEM->" +RUniv+ ", Publish->"+ RecUniv);
+		    	 
+		    	 String NTitle = getElement("RRTitle_xpath").getText();
+		    	 if(!NTitle.equals(Title)) {reportFailure("Title is not correct -AEM->" +Title+ ", Publish->"+ NTitle);} 
+		    	 	ExtTest.log(LogStatus.INFO,"Title is correct - AEM->" +Title+ ", Publish->"+ NTitle); 
+		     }
+		     else if (datakey.equalsIgnoreCase("C34-Team Listing Leadership Setting") ){
+		    	 driver.get("https://qa.www.marsh.com/us/about-marsh/leadership.html");
+		    	 waitTillPageLoaded();
+		    	 scrollToElement("LLImage_xpath");
+		    	 if(!ImageValidation("LLImage_xpath").equalsIgnoreCase("Square")) {reportFailure("Image is not Square.");}
+			    	ExtTest.log(LogStatus.INFO,"Image is Square as expected on C34-Team Listing Leadership Setting page.");
+		    	 capturescreenshot();
+		    	 String FullName = getElement("LLFullName_xpath").getText();
+		    	 if(!FullName.equals(FName)) {reportFailure("Full name not displayed at Team Listing Leadership page -AEM->" +FName+ ", Publish->"+ FullName);} 
+		    	 	ExtTest.log(LogStatus.INFO,"Correct full name displayed at Team Listing Leadership page - AEM->" +FName+ ", Publish->"+ FullName);
+		    	 
+		    	 String NTitle = getElement("LLTitle_xpath").getText();
+		    	 if(!NTitle.equals(STitle)) {reportFailure("Short Title is not correct -AEM->" +STitle+ ", Publish->"+ NTitle);} 
+		    	 	ExtTest.log(LogStatus.INFO,"Short Title is correct - AEM->" +STitle+ ", Publish->"+ NTitle); 
+		   		    	 
+				}	 
+		     else if (datakey.equalsIgnoreCase("C34-Team Listing Recruiting Setting") ){
+		    	 driver.get("https://qa.www.marsh.com/us/careers/campusrecruiting/our-people.html");
+		    	 waitTillPageLoaded();
+		    	 scrollToElement("LRImage_xpath");
+		    	 if(!ImageValidation("LRImage_xpath").equalsIgnoreCase("Square")) {reportFailure("Image is not Square.");}
+			    	ExtTest.log(LogStatus.INFO,"Image is Square as expected on C34-Team Listing Recruiting Setting page.");
+		    	 capturescreenshot();
+		    	 String FullName = getElement("LRName_xpath").getText();
+		    	 if(!FullName.equals(SName)) {reportFailure("First name not displayed at Team Listing Recruiting page -AEM->" +SName+ ", Publish->"+ FullName);} 
+		    	 	ExtTest.log(LogStatus.INFO,"Correct first name displayed at Team Listing Recruiting page - AEM->" +SName+ ", Publish->"+ FullName);
+		    	 
+		    	 String RecUniv = getElement("LRRUni_xpath").getText();
+			    	 if(!RecUniv.equals(RUniv)) {reportFailure("Recruiting University is not correct -AEM->" +RUniv+ ", Publish->"+ RecUniv);} 
+			    	 	ExtTest.log(LogStatus.INFO,"Recruting University is correct - AEM->" +RUniv+ ", Publish ->"+ RecUniv);
+			    	 
+			     String NTitle = getElement("LRTitle_xpath").getText();
+			    	 if(!NTitle.equals(STitle)) {reportFailure("Short title is not correct -AEM->" +STitle+ ", Publish->"+ NTitle);} 
+			    	 	ExtTest.log(LogStatus.INFO,"Short title is correct - AEM->" +STitle+ ", Publish->"+ NTitle);
+				}
+		     else if (datakey.equalsIgnoreCase("C35-Leadership Detail") ){
+		    	 driver.get("https://qa.www.marsh.com/us/about-marsh/leadership/rajender.html");
+		    	 waitTillPageLoaded();
+		    	 scrollToElement("LDImage_xpath");
+		    	 if(!ImageValidation("LDImage_xpath").equalsIgnoreCase("Portrait")) {reportFailure("Image is not Portrait.");}
+			    	ExtTest.log(LogStatus.INFO,"Image is Portrait as expected on C35-Leadership Detail page.");
+		    	 capturescreenshot();
+		    	 
+			     String NTitle = getElement("LDTitle_xpath").getText();
+			    	 if(!NTitle.equals(Title)) {reportFailure("Title is not correct -AEM->" +Title+ ", Publish >"+ NTitle);} 
+			    	 	ExtTest.log(LogStatus.INFO,"Title is correct - AEM->" +Title+ ", Publish >"+ NTitle);
+		    	 
+				}
+		     else if (datakey.equalsIgnoreCase("C43-Bio Detail") ){
+		    	 driver.get("https://qa.www.marsh.com/us/careers/campusrecruiting/our-people/rajender.html");
+		    	 waitTillPageLoaded();
+		    	 scrollToElement("BDImage_xpath");
+		    	 if(!ImageValidation("BDImage_xpath").equalsIgnoreCase("Square")) {reportFailure("Image is not Square.");}
+			    	ExtTest.log(LogStatus.INFO,"Image is Square as expected on C43-Bio Detail page.");
+		    	 capturescreenshot();
+		    	 String FullName = getElement("BDName_xpath").getText();
+		    	 if(!FullName.equals(SName)) {reportFailure("First name not displayed at Bio Detail page -AEM->" +SName+ ", Publish->"+ FullName);} 
+		    	 	ExtTest.log(LogStatus.INFO,"Correct first name displayed at Bio Detail page - AEM->" +SName+ ", Publish ->"+ FullName);
+		    	 
+		    	 String RecUniv = getElement("BDRUni_xpath").getText();
+			    	 if(!RecUniv.equals(RUniv)) {reportFailure("Recruiting University is not correct -AEM->" +RUniv+ ", Publish->"+ RecUniv);} 
+			    	 	ExtTest.log(LogStatus.INFO,"Recruting University is correct - AEM->" +RUniv+ ", Publish->"+ RecUniv);
+			    	 
+			     String NTitle = getElement("BDTitle_xpath").getText();
+			    	 if(!NTitle.equals(Title)) {reportFailure("Title is not correct -AEM->" +Title+ ", Publish->"+ NTitle);} 
+			    	 	ExtTest.log(LogStatus.INFO,"Title is correct - AEM->" +Title+ ", Publish->"+ NTitle);
+		    	 
+				}
+		     else if (datakey.equalsIgnoreCase("RR01-Right Rail Bio Detail") ){
+		    	 driver.get("https://qa.www.marsh.com/us/careers/campusrecruiting/our-people/rajender.html");
+		    	 waitTillPageLoaded();
+		    	 scrollToElement("BRRImage_xpath");
+		    	 if(!ImageValidation("BRRImage_xpath").equalsIgnoreCase("Square")) {reportFailure("Image is not Square.");}
+			    	ExtTest.log(LogStatus.INFO,"Image is Square as expected on RR01-Right Rail Bio Detail page.");
+		    	 capturescreenshot();
+		    	 String FullName = getElement("BRRName_xpath").getText();
+		    	    if(!FullName.equals(FName)) {reportFailure("Full name not displayed at Right Rail Bio page -AEM->" +FName+ ", Publish->"+ FullName);} 
+		    	 	ExtTest.log(LogStatus.INFO,"Correct full name displayed at Right Rail Bio page - AEM->" +FName+ ", Publish->"+ FullName);
+		    	String NTitle = getElement("BRRTitle_xpath").getText();
+			    	 if(!NTitle.equals(Title)) {reportFailure("Title is not correct -AEM->" +Title+ ", Publish->"+ NTitle);} 
+			    	 	ExtTest.log(LogStatus.INFO,"Title is correct - AEM->" +Title+ ", Publish->"+ NTitle);
+
+				}
+		     else if (datakey.equalsIgnoreCase("C11-Article Summary") ){
+		    	 driver.get("https://qa.www.marsh.com/us/insights/research/article_new1.html");
+		    	 waitTillPageLoaded();
+		    	 scrollToElement("ASImage_xpath");
+		    	 if(!ImageValidation("ASImage_xpath").equalsIgnoreCase("Portrait")) {reportFailure("Image is not Portrait.");}
+			    	ExtTest.log(LogStatus.INFO,"Image is Portrait as expected on C11-Article Summary page.");
+		    	 capturescreenshot();
+		    	 String FullName = getElement("ASName_xpath").getText();
+		    	    if(!FullName.equals(FName)) {reportFailure("Full name not displayed at Article Summary page - AEM->" +FName+ ", Publish->"+ FullName);} 
+		    	 	ExtTest.log(LogStatus.INFO,"Correct full name displayed at Article Summary page - AEM->" +FName+ ", Publish->"+ FullName);
+		    	String NTitle = getElement("ASTitle_xpath").getText();
+			    	 if(!NTitle.equals(Title)) {reportFailure("Title is not correct - AEM->" +Title+ ", Publish->"+ NTitle);} 
+			    	 	ExtTest.log(LogStatus.INFO,"Title is correct - AEM->" +Title+ ", Publish->"+ NTitle);
+		    	 
+				}
+		     else if (datakey.equalsIgnoreCase("C25–Blog Item") ){
+		    	 driver.get("https://qa.www.marsh.com/us/insights/risk-in-context/blog-item-1.html");
+		    	 waitTillPageLoaded();
+		    	 scrollToElement("BIImage_xpath");
+		    	 if(!ImageValidation("BIImage_xpath").equalsIgnoreCase("Square")) {reportFailure("Image is not Square.");}
+			    	ExtTest.log(LogStatus.INFO,"Image is Square as expected on C25–Blog Item page.");
+		    	 capturescreenshot();
+		    	 String FullName = getElement("BIName_xpath").getText();
+		    	    if(!FullName.equals(FName)) {reportFailure("Full name not displayed at Blog Item page -AEM->" +FName+ ", Publish->"+ FullName);} 
+		    	 	ExtTest.log(LogStatus.INFO,"Correct full name displayed at Blog Item page - AEM->" +FName+ ", Publish->"+ FullName);
+		    	String NBio = getElement("BIBio_xpath").getText();
+			    	 if(!NBio.equals(SBio)) {reportFailure("Short Bio is not correct -AEM->" +SBio+ ", Publish->"+ NBio);} 
+			    	 	ExtTest.log(LogStatus.INFO,"Short Bio is correct - AEM->" +SBio+ ", Publish->"+ NBio);
+		    	 
+				}
+		     else if (datakey.equalsIgnoreCase("C40–Attendee List") ){
+		    	 driver.get("https://qa.www.marsh.com/us/events/attendees.html");
+		    	 waitTillPageLoaded();
+		    	 scrollToElement("AttendeeName_xpath");
+		    	 getElement("AttendeeName_xpath").click();
+		    	 if(!ImageValidation("ALImage_xpath").equalsIgnoreCase("Square")) {reportFailure("Image is not Square.");}
+			    	ExtTest.log(LogStatus.INFO,"Image is Square as expected on C40-Attendee List page.");
+		    	 capturescreenshot();
+		    	 String FullName = getElement("ALName_xpath").getText();
+		    	    if(!FullName.equals(FName)) {reportFailure("Full name not displayed at Attendee List - AEM->" +FName+ ", Publish->"+ FullName);} 
+		    	 	ExtTest.log(LogStatus.INFO,"Correct full name displayed at Attendee List  - AEM->" +FName+ ", Publish->"+ FullName);
+		    	 	
+		    	 String NTitle = getElement("ALTitle_xpath").getText();
+			    	 if(!NTitle.equals(Title)) {reportFailure("Title is not correct - AEM->" +Title+ ", Publish->"+ NTitle);} 
+			    	 	ExtTest.log(LogStatus.INFO,"Title is correct - AEM->" +Title+ ", Publish->"+ NTitle);
+		    	String NBio = getElement("ALBio_xpath").getText();
+			    	 if(!NBio.equals(SBio)) {reportFailure("Short Bio is not correct - AEM->" +SBio+ ", Publish->"+ NBio);} 
+			    	 	ExtTest.log(LogStatus.INFO,"Short Bio is correct - AEM->" +SBio+ ", Publish->"+ NBio);
+		    	  
+				}
+		     else if (datakey.equalsIgnoreCase("C70–Shared People List") ){
+		    	 driver.get("https://qa.www.marsh.com/us/sharedpeople.html");
+		    	 waitTillPageLoaded();
+		    	 scrollToElement("SPLCandidate_xpath");
+		    	 getElement("SPLCandidate_xpath").click();
+		    	 if(!ImageValidation("SPLImage_xpath").equalsIgnoreCase("Portrait")) {reportFailure("Image is not Portrait.");}
+			    	ExtTest.log(LogStatus.INFO,"Image is Portrait as expected on C70-Shared People List page.");
+		    	 capturescreenshot();
+		    	 String FullName = getElement("SPLName_xpath").getText();
+		    	    if(!FullName.equals(FName)) {reportFailure("Full name not displayed at Shared People List - AEM->" +FName+ ", Publish->"+ FullName);} 
+		    	 	ExtTest.log(LogStatus.INFO,"Correct full name displayed at Shared People List - AEM->" +FName+ ", Publish->"+ FullName);
+		    	 	
+		    	 String NTitle = getElement("SPLTitle_xpath").getText();
+			    	 if(!NTitle.equals(Title)) {reportFailure("Title is not correct - AEM->" +Title+ ", Publish->"+ NTitle);} 
+			    	 	ExtTest.log(LogStatus.INFO,"Title is correct - AEM->" +Title+ ", Publish->"+ NTitle);
+		    	String NBio = getElement("SPLBio_xpath").getText();
+			    	 if(!NBio.equals(SBio)) {reportFailure("Short Bio is not correct - AEM->" +SBio+ ", Publish->"+ NBio);} 
+			    	 	ExtTest.log(LogStatus.INFO,"Short Bio is correct - AEM->" +SBio+ ", Publish->"+ NBio);
+			    String NEmail = getElement("SPLEmail_xpath").getText();
+				    	 if(!NEmail.equals(Email)) {reportFailure("Email id is not correct - AEM->" +Email+ ", Publish->"+ NEmail);} 
+				    	 	ExtTest.log(LogStatus.INFO,"Email id is correct - AEM->" +Email+ ", Publish->"+ NEmail);
+				}
+		     else {
+		    	 reportFailure("This datakey value is not present for validation :-"+ datakey);
+		     }	 
+		} 
+	
+	 public void FileUpload(String locatorkey, String datakey) {
+			waitTillPageLoaded();
+			ExtTest.log(LogStatus.INFO, "File upload is started..");
+			WebElement ele = getElement(locatorkey);
+			ele.click();
+			
+			datakey = datakey.replace("\\\\" + "\\\\", "\\\\");
+	        StringSelection ss = new StringSelection(datakey);
+			java.awt.Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss,null);
+			
+			try {
+				Thread.sleep(5000);
+				Robot robo = new Robot();
+											
+				robo.keyPress(KeyEvent.VK_CONTROL);
+				robo.keyPress(KeyEvent.VK_V);
+				
+				robo.keyRelease(KeyEvent.VK_CONTROL);
+				robo.keyRelease(KeyEvent.VK_V);
+				Thread.sleep(5000);
+				
+				robo.keyPress(KeyEvent.VK_ENTER);
+				robo.keyRelease(KeyEvent.VK_ENTER);
+				capturescreenshot();
+					      
+				
+			} catch (Exception e) {
+				reportFailure("Exception in Asset upload");
+			}
+			}
+
+	public void waitForDelay(String object) throws InterruptedException {
+		Thread.sleep(10000);
+		
+	}
+		}

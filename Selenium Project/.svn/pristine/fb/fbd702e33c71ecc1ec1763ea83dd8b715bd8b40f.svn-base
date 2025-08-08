@@ -1,0 +1,43 @@
+package Marsh_util;
+
+public class Marsh_Constants {
+	
+	static final String OPEN_BROWSER = "openbrowser";
+	static final String OPEN_URL = "openurl"; 
+	static final String CLICK_ELEMENT = "clickelement"; 
+	static final String LAST_TEST_STEP = "lastTestStep"; 
+	static final String VERIFY_TEXT_PRESENT = "verifyTextPresent"; 
+	static final String VERIFY_ATTRIBUTE_VALUE = "verifyAttributeValue"; 
+	static final String DOUBLE_CLICK_ELEMENT = "doubleclickelement"; 
+	static final String INPUT = "input"; 
+	static final String VERIFY_ELEMENT = "verifyelement"; 
+	static final String VERIFY_LOGIN = "verifylogin"; 
+	static final String WAIT_FOR_ELEMENT = "waitforelement"; 
+	static final String WAIT_FOR_ELEMENT_CLICKABLE = "waitForElementClickable";  
+	static final String SWITCH_TAB = "switchTab"; 
+	static final String SWITCH_FRAME = "switchFrame"; 
+	static final String DELETE_COOKIE	 = "deleteCookie"; 
+	static final String VERIFY_WORD_COUNT	 = "verifyWordCount";
+	static final String DE_SELECT_FRAME = "deSelectFrame"; 
+	static final String OPEN_AEM_BOX = "openAEMBox";
+	static final String VERIFY_BROWSE_VALUE = "verifyBrowseValue";
+	static final String CLOSE_COOKIE_POPUP_IF_PRESENT = "closeCOOKIEPopupIfPresent"; 
+	static final String VERIFY_REGISTER_FORM = "verifyRegisterForm"; 
+	static final String VERIFY_LINKS_PRESENT = "verifyLinksPresent"; 
+	static final String VERIFY_LINKS_CLICKABLE = "verifyLinksClickable";
+	static final String VERIFY_CONTENT_PAGES = "verifyContentPages"; 
+	static final String SELECT_FROM_DROP = "selectFromDrop"; 
+	static final String SCROLL_PAGE = "scrollPage"; 
+	static final String VERIFY_CHECKBOX_SELECTED= "verifyCheckBoxSelected"; 
+	static final String VERIFY_URL_REDIRECTION = "verifyUrlRedirection";
+	static final String VERIFY_NEWTAB_URL_REDIRECTION = "verifyNewTabUrlRedirection";
+	static final String VERIFY_DATE_FORMAT = "verifyDateFormat";
+	static final String VERIFY_SHARED_PEOPLE_CREDENTIALS = "verifySharedPeopleCredentials";
+	static final String INSERT_SHARED_PEOPLE_CREDENTIALS = "insertSharedPeopleCredentials";
+	static final String VERIFY_SHARED_OFFICES = "verifySharedOffices";
+	static final String IMAGE_VALIDATION= "ImageValidation";
+	static final String FILE_UPLOAD= "FileUpload";
+	static final String WAIT_FOR_DELAY= "waitForDelay";
+	static final String HOVER_MOUSE= "hoverMouse";
+	static final String SCROLL_TILL_PAGE= "scrollTillPage";
+}

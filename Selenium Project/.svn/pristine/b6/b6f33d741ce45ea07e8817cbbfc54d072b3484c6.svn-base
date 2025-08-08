@@ -1,0 +1,74 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>Marsh_Tests</groupId>
+  <artifactId>Marsh_AEM</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>Marsh_AEM</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+  </properties>
+
+<dependencies>
+<!--   POI   -->
+<dependency>
+<groupId>org.apache.poi</groupId>
+<artifactId>poi</artifactId>
+<version>3.6</version>
+</dependency>
+<dependency>
+<groupId>org.apache.poi</groupId>
+<artifactId>poi-ooxml</artifactId>
+<version>3.6</version>
+</dependency>
+<dependency>
+<groupId>org.apache.poi</groupId>
+<artifactId>poi-ooxml-schemas</artifactId>
+<version>3.6</version>
+</dependency>
+<dependency>
+<groupId>dom4j</groupId>
+<artifactId>dom4j</artifactId>
+<version>1.1</version>
+</dependency>
+<dependency>
+<groupId>org.apache.xmlbeans</groupId>
+<artifactId>xmlbeans</artifactId>
+<version>2.3.0</version>
+</dependency>
+<dependency>
+        <groupId>org.seleniumhq.selenium</groupId>
+        <artifactId>selenium-java</artifactId>
+        <version>3.13.0</version>
+    </dependency>
+<dependency>
+<groupId>com.relevantcodes</groupId>
+<artifactId>extentreports</artifactId>
+<version>2.41.1</version>
+</dependency>
+<!--   Testng  -->
+<dependency>
+<groupId>org.testng</groupId>
+<artifactId>testng</artifactId>
+<version>6.11</version>
+</dependency>
+<dependency>
+    <groupId>org.apache.commons</groupId>
+    <artifactId>commons-io</artifactId>
+    <version>1.3.2</version>
+</dependency>
+<dependency>
+<groupId>org.apache.maven.surefire</groupId>
+<artifactId>surefire</artifactId>
+<version>2.18.1</version>
+<type>pom</type>
+</dependency>
+</dependencies>
+</project>

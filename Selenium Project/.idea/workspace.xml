@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="fb01362d-0d8e-42a7-876b-a1387721c0f2" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2M6m780ooljGidjUH1cI2S8K2e8" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RunManager" selected="TestNG.Marsh_Country_Site_Login_Validation_Test">
+    <configuration name="Marsh_Country_Site_Login_Validation_Test" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Marsh_AEM" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="sites_Redirection.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="sites_Redirection" />
+      <option name="MAIN_CLASS_NAME" value="sites_Redirection.Marsh_Country_Site_Login_Validation_Test" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Marsh_Country_Site_Url_Test" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Marsh_AEM" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="sites_Redirection.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="sites_Redirection" />
+      <option name="MAIN_CLASS_NAME" value="sites_Redirection.Marsh_Country_Site_Url_Test" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Marsh_Country_Site_Url_Test.MarshCountrySite_Test" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Marsh_AEM" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="sites_Redirection.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="sites_Redirection" />
+      <option name="MAIN_CLASS_NAME" value="sites_Redirection.Marsh_Country_Site_Url_Test" />
+      <option name="METHOD_NAME" value="MarshCountrySite_Test" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Marsh_Microsite_Url_Test.MarshMicrosite_Test" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Marsh_AEM" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="sites_Redirection.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="sites_Redirection" />
+      <option name="MAIN_CLASS_NAME" value="sites_Redirection.Marsh_Microsite_Url_Test" />
+      <option name="METHOD_NAME" value="MarshMicrosite_Test" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Url_Redirection_Test.UrlRedirection_Test" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Marsh_AEM" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="sites_Redirection.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="sites_Redirection" />
+      <option name="MAIN_CLASS_NAME" value="sites_Redirection.Url_Redirection_Test" />
+      <option name="METHOD_NAME" value="UrlRedirection_Test" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="TestNG.Marsh_Country_Site_Login_Validation_Test" />
+        <item itemvalue="TestNG.Marsh_Country_Site_Url_Test" />
+        <item itemvalue="TestNG.Marsh_Country_Site_Url_Test.MarshCountrySite_Test" />
+        <item itemvalue="TestNG.Marsh_Microsite_Url_Test.MarshMicrosite_Test" />
+        <item itemvalue="TestNG.Url_Redirection_Test.UrlRedirection_Test" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration" cleanupOnStartRun="true">
+    <configuration>C:\Users\sande\AppData\Roaming\Subversion</configuration>
+    <supportedVersion>125</supportedVersion>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="fb01362d-0d8e-42a7-876b-a1387721c0f2" name="Changes" comment="" />
+      <created>1677096236198</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1677096236198</updated>
+    </task>
+    <servers />
+  </component>
+</project>
