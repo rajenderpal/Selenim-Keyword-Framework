@@ -8,6 +8,7 @@ package pal_util;
  */
 
 import java.io.FileInputStream;
+import java.time.Duration;
 import java.util.Properties;
 import java.io.File;
 import java.util.Date;
@@ -23,7 +24,6 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.firefox.ProfilesIni;
@@ -81,15 +81,6 @@ public class App_Keywords {
 			driver = new FirefoxDriver();
 
 		} else if (browserkey.equalsIgnoreCase(CHROME)) {
-			fl = new File(System.getProperty("user.dir") + "\\chromedriver.exe");
-			if (!fl.exists()) {
-				ExtTest.log(LogStatus.ERROR, "Chrome driver executable file does not exist" + " in the project path.");
-				Assert.fail("Chrome driver executable file does not exist in the project path.");
-			}
-			System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\chromedriver.exe");
-
-			ChromeOptions options = new ChromeOptions();
-			options.addArguments("--start-maximized");
 			driver = new ChromeDriver();
 
 		} else if (browserkey.equalsIgnoreCase(IE)) {
@@ -107,7 +98,7 @@ public class App_Keywords {
 		}
 
 		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20000));
 		return driver;
 	}
 

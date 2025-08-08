@@ -14,10 +14,10 @@
         <protocol>https</protocol>
         
         <!-- title of the document -->
-        <documentTitle>Marsh AEM Report</documentTitle>
+        <documentTitle>My Sample Test Reports</documentTitle>
         
         <!-- report name - displayed at top-nav -->
-        <reportName>Marsh AEM Automation Report</reportName>
+        <reportName>Automation Report</reportName>
         
         <!-- report headline - displayed at top-nav, after reportHeadline -->
         <reportHeadline></reportHeadline>
