@@ -51,9 +51,12 @@ public class Keywords {
 					App_key.verifyTextPresent(object, Htable.get(data));
 				else if (keyword.equals(pal_Constants.INPUT))
 					App_key.input(object, Htable.get(data));
-			
-				else if (keyword.equals(pal_Constants.REFRESH_PAGE))
-					App_key.refreshPage();
+				else if (keyword.equals(pal_Constants.Last_Test_Step))
+					App_key.lastTestStep();
+				else if (keyword.equals(pal_Constants.CLICK_ELEMENT))
+					App_key.clickelement(object);
+				else if (keyword.equals(pal_Constants.CLOSE_BROWSER))
+					App_key.closebrowser();
 				else {
 					TestKeywords.log(LogStatus.ERROR, "Oops!..Provided keyword is not present in the Keywords.java file.");
 					Assert.fail("Oops!..Provided keyword is not present in the Keywords.java file.");		

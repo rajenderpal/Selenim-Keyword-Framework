@@ -13,7 +13,6 @@ import java.util.Properties;
 import java.io.File;
 import java.util.Date;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
@@ -28,26 +27,28 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.firefox.ProfilesIni;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
 public class App_Keywords {
-	
+
 	static final String CHROME = "chrome";
-    static final String IE = "ie";
-    static final String MOZILLA = "mozilla";
-    static final String ID = "_id";
-    static final String XPATH = "_xpath";
-    static final String NAME = "_name";
-    static final String CSS = "_css";
-    static final String CLASS = "_class";
-    static final String LINK_TEXT = "_linktext";
-    public WebDriver driver;
-    public Properties prop = null;
-    public ExtentTest ExtTest = null;
-    public String UserName = null;
-    public int EndResult = 0;
+	static final String IE = "ie";
+	static final String MOZILLA = "mozilla";
+	static final String ID = "_id";
+	static final String XPATH = "_xpath";
+	static final String NAME = "_name";
+	static final String CSS = "_css";
+	static final String CLASS = "_class";
+	static final String LINK_TEXT = "_linktext";
+	public WebDriver driver;
+	public Properties prop = null;
+	public ExtentTest ExtTest = null;
+	public String UserName = null;
+	public int EndResult = 0;
 
 	// Initialize property file object in the constructor of this class
 
@@ -98,7 +99,7 @@ public class App_Keywords {
 		}
 
 		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20000));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2000));
 		return driver;
 	}
 
@@ -167,6 +168,20 @@ public class App_Keywords {
 			return false;
 		else
 			return true;
+	}
+
+	public void clickelement(String locatorkey) throws InterruptedException {
+		waitTillPageLoaded();
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+		wait.until(ExpectedConditions.visibilityOf(getElement(locatorkey)));
+		if (isElementPresent(locatorkey)) {
+			scrollToElement(locatorkey);
+			getElement(locatorkey).click();
+			ExtTest.log(LogStatus.INFO, "Clicked on element:- " + locatorkey);
+			capturescreenshot();
+		} else {
+			reportFailure("Required element:- " + locatorkey + " is not visible.");
+		}
 	}
 
 	public WebElement getElement(String locatorkey) {
@@ -251,7 +266,8 @@ public class App_Keywords {
 		JavascriptExecutor jse = (JavascriptExecutor) driver;
 		jse.executeScript("arguments[0].scrollIntoView(false);", ele);
 	}
-	public void  closebrowser() {
+
+	public void closebrowser() {
 		driver.close();
 		ExtTest.log(LogStatus.INFO, "Closed driver.");
 	}

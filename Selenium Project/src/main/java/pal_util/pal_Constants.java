@@ -18,5 +18,5 @@ public class pal_Constants {
 	static final String WAIT_FOR_DELAY= "waitForDelay";
 	static final String HOVER_MOUSE= "hoverMouse";
 	static final String SCROLL_TILL_PAGE= "scrollTillPage";
-	static final String REFRESH_PAGE= "refreshPage";
+	static final String Last_Test_Step= "lastTestStep";
 }
